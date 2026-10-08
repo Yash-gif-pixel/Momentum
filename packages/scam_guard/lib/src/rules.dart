@@ -16,6 +16,18 @@ const int mediumRiskThreshold = 30;
 const int highRiskThreshold = 60;
 const int maximumRiskScore = 100;
 
+// Devanagari terms use substring matching because Dart RegExp's \b boundary
+// only recognizes ASCII letters as word characters.
+const Set<String> urgencyDevanagariKeywords = {
+  'तुरंत', 'जल्दी', 'अभी', 'आखिरी मौका',
+};
+const Set<String> kycOrAccountBlockDevanagariKeywords = {
+  'केवाईसी', 'खाता बंद', 'खाता ब्लॉक', 'आधार', 'ओटीपी', 'पैन कार्ड',
+};
+const Set<String> refundOrPrizeBaitDevanagariKeywords = {
+  'रिफंड', 'कैशबैक', 'लॉटरी', 'इनाम', 'आप जीत गए',
+};
+
 const Map<String, String> supportWords = {
   'support': 'support',
   'helpdesk': 'help desk',

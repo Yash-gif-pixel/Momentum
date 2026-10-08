@@ -23,14 +23,29 @@ void main() {
     test('urgency language', () {
       hasCode(check('shop@okaxis', note: 'Pay abhi, last chance!'), 'URGENCY_LANGUAGE', true);
       hasCode(check('shop@okaxis', note: 'Payment for groceries'), 'URGENCY_LANGUAGE', false);
+      hasCode(check('shop@okaxis', note: 'तुरंत भुगतान करें'), 'URGENCY_LANGUAGE', true);
+      hasCode(check('shop@okaxis', note: 'किराने का सामान'), 'URGENCY_LANGUAGE', false);
+      expect(check('shop@okaxis', note: 'Pay urgently, तुरंत भुगतान करें').signals.where((s) => s.code == 'URGENCY_LANGUAGE').length, 1);
     });
     test('KYC or account block language', () {
       hasCode(check('shop@okaxis', note: 'Your account is blocked; send OTP'), 'KYC_OR_ACCOUNT_BLOCK', true);
       hasCode(check('shop@okaxis', note: 'Thank you for shopping'), 'KYC_OR_ACCOUNT_BLOCK', false);
+      hasCode(check('shop@okaxis', note: 'आपका खाता बंद हो जाएगा, ओटीपी भेजें'), 'KYC_OR_ACCOUNT_BLOCK', true);
+      hasCode(check('shop@okaxis', note: 'दूध और ब्रेड'), 'KYC_OR_ACCOUNT_BLOCK', false);
+      expect(check('shop@okaxis', note: 'Send OTP now; ओटीपी भेजें').signals.where((s) => s.code == 'KYC_OR_ACCOUNT_BLOCK').length, 1);
+    });
+    test('PAN matches only in identity contexts', () {
+      hasCode(check('shop@okaxis', note: 'pan masala and supari'), 'KYC_OR_ACCOUNT_BLOCK', false);
+      hasCode(check('shop@okaxis', note: 'paan shop daily stock'), 'KYC_OR_ACCOUNT_BLOCK', false);
+      hasCode(check('shop@okaxis', note: 'Update your PAN card today'), 'KYC_OR_ACCOUNT_BLOCK', true);
+      hasCode(check('shop@okaxis', note: 'share PAN number for KYC'), 'KYC_OR_ACCOUNT_BLOCK', true);
     });
     test('refund or prize bait', () {
       hasCode(check('shop@okaxis', note: 'You have won cashback'), 'REFUND_OR_PRIZE_BAIT', true);
       hasCode(check('shop@okaxis', note: 'Monthly grocery order'), 'REFUND_OR_PRIZE_BAIT', false);
+      hasCode(check('shop@okaxis', note: 'आप जीत गए! इनाम पाने के लिए भुगतान करें'), 'REFUND_OR_PRIZE_BAIT', true);
+      hasCode(check('shop@okaxis', note: 'दूध और ब्रेड'), 'REFUND_OR_PRIZE_BAIT', false);
+      expect(check('shop@okaxis', note: 'cashback offer, कैशबैक पाएं').signals.where((s) => s.code == 'REFUND_OR_PRIZE_BAIT').length, 1);
     });
     test('brand impersonation VPA', () {
       hasCode(check('paytm.support@okaxis'), 'BRAND_IMPERSONATION_VPA', true);
