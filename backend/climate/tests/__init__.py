@@ -1,0 +1,1 @@
+"""Climate package tests."""

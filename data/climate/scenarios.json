@@ -1,0 +1,35 @@
+[
+  {
+    "scenario_id": "normal_monsoon",
+    "label": "Normal monsoon",
+    "description": "Simulated ordinary monsoon rainfall over 30 days. Rain values are simulated, not observed IMD data.",
+    "grid_cell": {
+      "lat": 19.0,
+      "lon": 20.0
+    },
+    "period_start": "2025-07-01",
+    "period_end": "2025-07-30"
+  },
+  {
+    "scenario_id": "heavy_rain_week",
+    "label": "Heavy rain week",
+    "description": "Simulated heavy rain on several days in one week. Rain values are simulated, not observed IMD data.",
+    "grid_cell": {
+      "lat": 22.0,
+      "lon": 22.5
+    },
+    "period_start": "2025-07-01",
+    "period_end": "2025-07-30"
+  },
+  {
+    "scenario_id": "flash_flood",
+    "label": "Flash flood",
+    "description": "Simulated intense short-duration rainfall event. Rain values are simulated, not observed IMD data.",
+    "grid_cell": {
+      "lat": 13.0,
+      "lon": 12.75
+    },
+    "period_start": "2025-07-01",
+    "period_end": "2025-07-30"
+  }
+]
