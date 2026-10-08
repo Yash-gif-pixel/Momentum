@@ -10,6 +10,7 @@ class ScamGuard {
     required double amountInr,
     String? payeeName,
     String? note,
+    ScamContext? context,
   }) {
     final stopwatch = Stopwatch()..start();
     final vpa = payeeVpa.trim().toLowerCase();
@@ -24,13 +25,16 @@ class ScamGuard {
     if (!RegExp(r'^[a-z0-9._-]+@[a-z]+$').hasMatch(vpa)) {
       add('INVALID_VPA_FORMAT', 'This payment address does not look like a standard UPI ID.', invalidVpaWeight);
     }
-    if (RegExp(r'\b(urgent|urgently|immediately|last chance|right now|turant|jaldi|abhi)\b').hasMatch(normalizedNote)) {
+    if (RegExp(r'\b(urgent|urgently|immediately|last chance|right now|turant|jaldi|abhi)\b').hasMatch(normalizedNote) ||
+        urgencyDevanagariKeywords.any(normalizedNote.contains)) {
       add('URGENCY_LANGUAGE', 'The note pressures you to pay urgently.', urgencyLanguageWeight);
     }
-    if (RegExp(r'\b(kyc|account\s+(?:is\s+)?(?:blocked|suspended)|pan|aadhaar|aadhar|otp)\b').hasMatch(normalizedNote)) {
+    if (RegExp(r'\b(kyc|account\s+(?:is\s+)?(?:blocked|suspended)|pan\s+(?:card|number|no|details)|update\s+pan|pan\s+update|pan\s+verification|aadhaar|aadhar|otp)\b').hasMatch(normalizedNote) ||
+        kycOrAccountBlockDevanagariKeywords.any(normalizedNote.contains)) {
       add('KYC_OR_ACCOUNT_BLOCK', 'The note mentions account or identity details that scammers may request.', kycOrAccountBlockWeight);
     }
-    if (RegExp(r'\b(refund|cashback|lottery|prize|reward|you have won)\b').hasMatch(normalizedNote)) {
+    if (RegExp(r'\b(refund|cashback|lottery|prize|reward|you have won)\b').hasMatch(normalizedNote) ||
+        refundOrPrizeBaitDevanagariKeywords.any(normalizedNote.contains)) {
       add('REFUND_OR_PRIZE_BAIT', 'The note offers a refund, prize, or reward.', refundOrPrizeBaitWeight);
     }
 
@@ -53,6 +57,15 @@ class ScamGuard {
     }
     if (knownScamVpas.contains(vpa)) {
       add('KNOWN_SCAM_VPA', 'This payment address is on the SDK’s demo warning list.', knownScamVpaWeight);
+    }
+    if (context?.isFirstTimePayee == true) {
+      add('FIRST_TIME_PAYEE', 'You have not paid this person before.', firstTimePayeeWeight);
+    }
+    final typicalAmountInr = context?.typicalAmountInr;
+    if (typicalAmountInr != null &&
+        typicalAmountInr > 0 &&
+        amountInr >= amountFarAboveUsualMultiplier * typicalAmountInr) {
+      add('AMOUNT_FAR_ABOVE_USUAL', 'This amount is much higher than you usually pay.', amountFarAboveUsualWeight);
     }
 
     final score = signals.fold<int>(0, (sum, signal) => sum + signal.weight).clamp(0, maximumRiskScore).toInt();

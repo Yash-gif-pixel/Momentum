@@ -7,6 +7,9 @@ const int brandImpersonationVpaWeight = 30;
 const int highDigitHandleWeight = 15;
 const int nameVpaMismatchWeight = 10;
 const int knownScamVpaWeight = 60;
+const int firstTimePayeeWeight = 10;
+const int amountFarAboveUsualWeight = 15;
+const double amountFarAboveUsualMultiplier = 3;
 
 // A handle is high-digit when it contains at least 8 characters, at least 80%
 // of which are digits. This rule is intentionally simple and deterministic.
@@ -15,6 +18,18 @@ const double highDigitMinimumRatio = 0.8;
 const int mediumRiskThreshold = 30;
 const int highRiskThreshold = 60;
 const int maximumRiskScore = 100;
+
+// Devanagari terms use substring matching because Dart RegExp's \b boundary
+// only recognizes ASCII letters as word characters.
+const Set<String> urgencyDevanagariKeywords = {
+  'तुरंत', 'जल्दी', 'अभी', 'आखिरी मौका',
+};
+const Set<String> kycOrAccountBlockDevanagariKeywords = {
+  'केवाईसी', 'खाता बंद', 'खाता ब्लॉक', 'आधार', 'ओटीपी', 'पैन कार्ड',
+};
+const Set<String> refundOrPrizeBaitDevanagariKeywords = {
+  'रिफंड', 'कैशबैक', 'लॉटरी', 'इनाम', 'आप जीत गए',
+};
 
 const Map<String, String> supportWords = {
   'support': 'support',
