@@ -22,6 +22,7 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.dependencies import get_artifact, get_demo_profiles, get_metrics, load_state
+from backend.climate.router import router as climate_router
 from backend.contract.api_schema import (
     AnalyzeAggregateRequest,
     AnalyzeRequest,
@@ -64,6 +65,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(climate_router)
 
 
 # A generous but hard upper bound on how much calendar time a single
