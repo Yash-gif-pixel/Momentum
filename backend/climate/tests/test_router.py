@@ -70,3 +70,42 @@ def test_unknown_scenario_is_404():
     response = _client().get(f"/api/climate/impact/{profile_id}?scenario_id=unknown")
     assert response.status_code == 404
     assert "scenario_id" in response.json()["detail"]
+
+
+def test_portfolio_totals_sorting_and_heavy_rain_affected_count():
+    response = _client().get("/api/climate/portfolio?scenario_id=heavy_rain_week")
+    assert response.status_code == 200
+    body = response.json()
+    borrowers = body["borrowers"]
+    assert [b["profile_id"] for b in borrowers] == [
+        b["profile_id"] for b in sorted(
+            borrowers,
+            key=lambda b: (-b["estimated_cashflow_impact_inr"], b["profile_id"]),
+        )
+    ]
+    assert body["total_estimated_impact_inr"] == round(
+        sum(b["estimated_cashflow_impact_inr"] for b in borrowers), 2
+    )
+    assert body["total_suggested_buffer_inr"] == sum(
+        b["suggested_resilience_buffer_inr"] for b in borrowers
+    )
+    assert body["borrowers_affected"] == sum(
+        b["estimated_cashflow_impact_inr"] > 0 for b in borrowers
+    )
+    assert body["borrowers_affected"] > 0
+    assert body["affects_credit_score"] is False
+    assert any("all demo borrowers" in line for line in body["assumptions"])
+
+
+def test_normal_monsoon_has_no_affected_borrowers_and_unknown_scenario_is_404():
+    response = _client().get("/api/climate/portfolio?scenario_id=normal_monsoon")
+    assert response.status_code == 200
+    assert response.json()["borrowers_affected"] == 0
+
+    response = _client().get("/api/climate/portfolio?scenario_id=unknown")
+    assert response.status_code == 404
+    assert "scenario_id" in response.json()["detail"]
+
+
+def test_portfolio_requires_scenario_id():
+    assert _client().get("/api/climate/portfolio").status_code == 422

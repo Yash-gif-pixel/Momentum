@@ -24,7 +24,13 @@ curl http://localhost:8000/api/climate/scenarios
 curl 'http://localhost:8000/api/climate/impact/lakshmi_vendor_001?scenario_id=heavy_rain_week'
 ```
 
-Include `backend.climate.router.router` in a FastAPI app to mount these routes.
+`GET /api/climate/portfolio?scenario_id={scenario_id}` summarizes the estimate for every demo borrower in the scenario grid cell:
+
+```bash
+curl 'http://localhost:8000/api/climate/portfolio?scenario_id=heavy_rain_week'
+```
+
+The portfolio response includes borrower-level estimates, affected-borrower count, aggregate impact and suggested buffers. The real API app mounts these climate routes.
 
 ## Assumptions and caveats
 

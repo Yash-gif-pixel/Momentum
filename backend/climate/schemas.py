@@ -42,3 +42,25 @@ class ImpactResponse(BaseModel):
     suggested_resilience_buffer_inr: float
     assumptions: list[str]
     affects_credit_score: bool
+
+
+class PortfolioBorrower(BaseModel):
+    profile_id: str
+    baseline_daily_inflow_inr: float
+    estimated_cashflow_impact_inr: float
+    impact_pct_of_monthly_inflow: float
+    suggested_resilience_buffer_inr: float
+
+
+class ClimatePortfolioResponse(BaseModel):
+    scenario_id: str
+    grid_cell: GridCell
+    period_start: str
+    period_end: str
+    disrupted_days: int
+    borrowers: list[PortfolioBorrower]
+    borrowers_affected: int
+    total_estimated_impact_inr: float
+    total_suggested_buffer_inr: float
+    assumptions: list[str]
+    affects_credit_score: bool

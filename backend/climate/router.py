@@ -11,7 +11,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from backend.api.dependencies import get_demo_profiles
 from backend.generator.schema import Profile
 from backend.climate.impact import calculate_impact
-from backend.climate.schemas import ImpactResponse, ScenariosResponse
+from backend.climate.schemas import ClimatePortfolioResponse, ImpactResponse, ScenariosResponse
 
 router = APIRouter(prefix="/api/climate", tags=["climate"])
 DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "climate"
@@ -50,5 +50,45 @@ def get_impact(profile_id: str, scenario_id: str, profiles: dict[str, Profile] =
         "period_start": scenario["period_start"],
         "period_end": scenario["period_end"],
         **result,
+        "affects_credit_score": False,
+    }
+
+
+@router.get("/portfolio", response_model=ClimatePortfolioResponse)
+def get_climate_portfolio(scenario_id: str, profiles: dict[str, Profile] = Depends(get_demo_profiles)) -> dict:
+    scenario = next((item for item in _scenarios() if item["scenario_id"] == scenario_id), None)
+    if scenario is None:
+        raise HTTPException(status_code=404, detail=f"Unknown scenario_id '{scenario_id}'.")
+
+    rainfall = _rainfall(scenario_id)
+    borrower_results = []
+    assumptions: list[str] = []
+    disrupted_days = 0
+    for profile_id, profile in profiles.items():
+        result = calculate_impact(profile, rainfall)
+        assumptions.extend(line for line in result["assumptions"] if line not in assumptions)
+        disrupted_days = result["disrupted_days"]
+        borrower_results.append({
+            "profile_id": profile_id,
+            "baseline_daily_inflow_inr": result["baseline_daily_inflow_inr"],
+            "estimated_cashflow_impact_inr": result["estimated_cashflow_impact_inr"],
+            "impact_pct_of_monthly_inflow": result["impact_pct_of_monthly_inflow"],
+            "suggested_resilience_buffer_inr": result["suggested_resilience_buffer_inr"],
+        })
+    borrower_results.sort(key=lambda borrower: (-borrower["estimated_cashflow_impact_inr"], borrower["profile_id"]))
+    assumptions.append("Prototype simplification: all demo borrowers are treated as located in this scenario's grid cell.")
+    total_impact = round(sum(borrower["estimated_cashflow_impact_inr"] for borrower in borrower_results), 2)
+    total_buffer = sum(borrower["suggested_resilience_buffer_inr"] for borrower in borrower_results)
+    return {
+        "scenario_id": scenario_id,
+        "grid_cell": scenario["grid_cell"],
+        "period_start": scenario["period_start"],
+        "period_end": scenario["period_end"],
+        "disrupted_days": disrupted_days,
+        "borrowers": borrower_results,
+        "borrowers_affected": sum(borrower["estimated_cashflow_impact_inr"] > 0 for borrower in borrower_results),
+        "total_estimated_impact_inr": total_impact,
+        "total_suggested_buffer_inr": total_buffer,
+        "assumptions": assumptions,
         "affects_credit_score": False,
     }
