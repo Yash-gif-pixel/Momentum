@@ -137,7 +137,7 @@ class _PaymentDemoScreenState extends State<PaymentDemoScreen> {
                   vpa: 'demo.refund@example',
                   name: 'Demo Refund Desk',
                   amount: '99',
-                  note: 'Refund processing fee',
+                  note: 'You have won a cashback refund, pay abhi to claim',
                 ),
               ),
             ],
