@@ -10,6 +10,7 @@ class ScamGuard {
     required double amountInr,
     String? payeeName,
     String? note,
+    ScamContext? context,
   }) {
     final stopwatch = Stopwatch()..start();
     final vpa = payeeVpa.trim().toLowerCase();
@@ -56,6 +57,15 @@ class ScamGuard {
     }
     if (knownScamVpas.contains(vpa)) {
       add('KNOWN_SCAM_VPA', 'This payment address is on the SDK’s demo warning list.', knownScamVpaWeight);
+    }
+    if (context?.isFirstTimePayee == true) {
+      add('FIRST_TIME_PAYEE', 'You have not paid this person before.', firstTimePayeeWeight);
+    }
+    final typicalAmountInr = context?.typicalAmountInr;
+    if (typicalAmountInr != null &&
+        typicalAmountInr > 0 &&
+        amountInr >= amountFarAboveUsualMultiplier * typicalAmountInr) {
+      add('AMOUNT_FAR_ABOVE_USUAL', 'This amount is much higher than you usually pay.', amountFarAboveUsualWeight);
     }
 
     final score = signals.fold<int>(0, (sum, signal) => sum + signal.weight).clamp(0, maximumRiskScore).toInt();

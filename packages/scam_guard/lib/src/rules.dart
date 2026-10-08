@@ -7,6 +7,9 @@ const int brandImpersonationVpaWeight = 30;
 const int highDigitHandleWeight = 15;
 const int nameVpaMismatchWeight = 10;
 const int knownScamVpaWeight = 60;
+const int firstTimePayeeWeight = 10;
+const int amountFarAboveUsualWeight = 15;
+const double amountFarAboveUsualMultiplier = 3;
 
 // A handle is high-digit when it contains at least 8 characters, at least 80%
 // of which are digits. This rule is intentionally simple and deterministic.

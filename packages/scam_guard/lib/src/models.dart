@@ -1,5 +1,12 @@
 enum ScamRiskLevel { low, medium, high }
 
+class ScamContext {
+  final bool? isFirstTimePayee;
+  final double? typicalAmountInr;
+
+  const ScamContext({this.isFirstTimePayee, this.typicalAmountInr});
+}
+
 class ScamSignal {
   final String code;
   final String message;

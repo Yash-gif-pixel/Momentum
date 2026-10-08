@@ -4,11 +4,12 @@ import 'package:test/test.dart';
 void main() {
   const guard = ScamGuard();
 
-  ScamCheckResult check(String vpa, {String? name, String? note}) => guard.check(
+  ScamCheckResult check(String vpa, {String? name, String? note, ScamContext? context}) => guard.check(
         payeeVpa: vpa,
         amountInr: 500,
         payeeName: name,
         note: note,
+        context: context,
       );
 
   void hasCode(ScamCheckResult result, String code, bool expected) {
@@ -64,6 +65,68 @@ void main() {
       hasCode(check('fictional-prize-desk@demo'), 'KNOWN_SCAM_VPA', true);
       hasCode(check('shop@okaxis'), 'KNOWN_SCAM_VPA', false);
     });
+  });
+
+  group('host-supplied context rules', () {
+    test('first-time payee fires only when explicitly true', () {
+      hasCode(check('shop@okaxis', context: const ScamContext(isFirstTimePayee: true)), 'FIRST_TIME_PAYEE', true);
+      hasCode(check('shop@okaxis', context: const ScamContext(isFirstTimePayee: false)), 'FIRST_TIME_PAYEE', false);
+      hasCode(check('shop@okaxis', context: const ScamContext()), 'FIRST_TIME_PAYEE', false);
+      hasCode(check('shop@okaxis'), 'FIRST_TIME_PAYEE', false);
+    });
+
+    test('far-above-usual amount uses a positive typical amount and inclusive boundary', () {
+      hasCode(check('shop@okaxis', context: const ScamContext(typicalAmountInr: 100)), 'AMOUNT_FAR_ABOVE_USUAL', true);
+      hasCode(guard.check(payeeVpa: 'shop@okaxis', amountInr: 299.99, context: const ScamContext(typicalAmountInr: 100)),
+          'AMOUNT_FAR_ABOVE_USUAL', false);
+      hasCode(guard.check(payeeVpa: 'shop@okaxis', amountInr: 300, context: const ScamContext(typicalAmountInr: 100)),
+          'AMOUNT_FAR_ABOVE_USUAL', true);
+      hasCode(check('shop@okaxis'), 'AMOUNT_FAR_ABOVE_USUAL', false);
+      hasCode(check('shop@okaxis', context: const ScamContext()), 'AMOUNT_FAR_ABOVE_USUAL', false);
+      hasCode(guard.check(payeeVpa: 'shop@okaxis', amountInr: 500, context: const ScamContext(typicalAmountInr: 0)),
+          'AMOUNT_FAR_ABOVE_USUAL', false);
+      hasCode(guard.check(payeeVpa: 'shop@okaxis', amountInr: 500, context: const ScamContext(typicalAmountInr: -10)),
+          'AMOUNT_FAR_ABOVE_USUAL', false);
+    });
+
+    test('context combines with existing evidence but is not enough by itself to warn', () {
+      final combined = guard.check(
+        payeeVpa: 'paytm.support@okaxis',
+        amountInr: 300,
+        note: '',
+        context: const ScamContext(isFirstTimePayee: true, typicalAmountInr: 100),
+      );
+      expect(combined.level, ScamRiskLevel.medium);
+      expect(combined.score, 55);
+      expect(combined.shouldWarn, true);
+
+      final firstTimeOnly = check('shop@okaxis', context: const ScamContext(isFirstTimePayee: true));
+      expect(firstTimeOnly.level, ScamRiskLevel.low);
+      expect(firstTimeOnly.score, 10);
+      expect(firstTimeOnly.shouldWarn, false);
+    });
+  });
+
+  test('calls without context preserve established scores and signal codes', () {
+    final cases = <(String, String?, String?, int, ScamRiskLevel, List<String>)>[
+      ('ramesh.kirana@okaxis', 'Ramesh Kirana', 'groceries', 0, ScamRiskLevel.low, []),
+      ('not-a-vpa', null, null, 25, ScamRiskLevel.low, ['INVALID_VPA_FORMAT']),
+      ('paytm.support@okaxis', null, null, 30, ScamRiskLevel.medium, ['BRAND_IMPERSONATION_VPA']),
+      (
+        'paytm.support@okaxis',
+        'Unknown Merchant',
+        'Urgent! You have won a refund; send OTP abhi',
+        100,
+        ScamRiskLevel.high,
+        ['URGENCY_LANGUAGE', 'KYC_OR_ACCOUNT_BLOCK', 'REFUND_OR_PRIZE_BAIT', 'BRAND_IMPERSONATION_VPA', 'NAME_VPA_MISMATCH'],
+      ),
+    ];
+    for (final (vpa, name, note, score, level, codes) in cases) {
+      final result = guard.check(payeeVpa: vpa, amountInr: 500, payeeName: name, note: note);
+      expect(result.level, level);
+      expect(result.score, score);
+      expect(result.signals.map((signal) => signal.code).toList(), codes);
+    }
   });
 
   test('clean payment is low with no signals', () {
