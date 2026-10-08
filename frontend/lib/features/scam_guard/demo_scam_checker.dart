@@ -1,5 +1,6 @@
 import 'scam_warning.dart';
 
+// Not used by the app; kept for tests.
 // Demo stand-in. Replaced by package:scam_guard via an adapter.
 ScamWarning demoScamChecker({
   required String payeeVpa,
