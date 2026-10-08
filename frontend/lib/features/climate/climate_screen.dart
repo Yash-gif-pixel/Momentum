@@ -1,9 +1,9 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../theme/credify_theme.dart';
 import 'climate_api_service.dart';
 import 'climate_models.dart';
+import 'climate_rain_chart.dart';
 
 class ClimateScreen extends StatefulWidget {
   final ClimateApiService service;
@@ -73,9 +73,8 @@ class _ClimateScreenState extends State<ClimateScreen> {
       const SizedBox(height: 4), Text(_currency.format(impact.estimatedCashflowImpactInr), style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontWeight: FontWeight.bold)),
       Text('${impact.impactPctOfMonthlyInflow.toStringAsFixed(1)}% of a typical month\'s inflow'),
       const SizedBox(height: 14), Wrap(spacing: 12, runSpacing: 8, children: [Chip(label: Text('$disrupted disrupted days')), Chip(label: Text('Resilience buffer ${_currency.format(impact.suggestedResilienceBufferInr)}'))]),
-      const SizedBox(height: 16), const Text('Daily rainfall', style: TextStyle(fontWeight: FontWeight.bold)),
-      SizedBox(height: 230, child: BarChart(BarChartData(maxY: impact.daily.fold<double>(0, (m, d) => d.rainMm > m ? d.rainMm : m) + 15, barGroups: [for (var i = 0; i < impact.daily.length; i++) BarChartGroupData(x: i, barRods: [BarChartRodData(toY: impact.daily[i].rainMm, color: impact.daily[i].disrupted ? t.warning : t.accentA, width: 7, borderRadius: BorderRadius.circular(2))], showingTooltipIndicators: impact.daily[i].disrupted ? [0] : [])], titlesData: FlTitlesData(leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: true, reservedSize: 36)), bottomTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)), topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)), rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false))), barTouchData: BarTouchData(enabled: true, touchTooltipData: BarTouchTooltipData(getTooltipItem: (group, groupIndex, rod, rodIndex) => BarTooltipItem('${impact.daily[group.x].date.day}: ${rod.toY.toStringAsFixed(0)} mm${impact.daily[group.x].disrupted ? '\nDisrupted' : ''}', const TextStyle(color: Colors.white))))))),
-      Wrap(spacing: 18, children: [Row(mainAxisSize: MainAxisSize.min, children: [Icon(Icons.square, size: 14, color: t.accentA), const SizedBox(width: 5), const Text('Regular day')]), Row(mainAxisSize: MainAxisSize.min, children: [Icon(Icons.square, size: 14, color: t.warning), const SizedBox(width: 5), const Text('Disrupted (tooltip marked)')])]),
+      const SizedBox(height: 16),
+      ClimateRainChart(daily: impact.daily),
       const SizedBox(height: 18), if (!impact.affectsCreditScore) _badge('Does not change the credit score', t.positive) else _badge('Warning: response indicates a credit score effect', t.negative),
       const SizedBox(height: 16), const Text('Assumptions', style: TextStyle(fontWeight: FontWeight.bold)),
       for (final item in impact.assumptions) Padding(padding: const EdgeInsets.only(top: 4), child: Text('• $item')),
