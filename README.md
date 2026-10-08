@@ -84,11 +84,14 @@ Climate responses set `affects_credit_score` to `false`. The climate tests enfor
 
 ## Running tests
 
-The backend suite uses Python `unittest`:
+Install pytest and run the backend suite:
 
 ```bash
-python3 -m unittest discover -s backend/tests -t .
+pip install pytest
+python -m pytest backend -q
 ```
+
+This runs both the Credify tests (`backend/tests`) and the climate tests (`backend/climate/tests`).
 
 Run the Flutter app-shell tests:
 
