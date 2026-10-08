@@ -3,6 +3,7 @@ import 'climate_models.dart';
 abstract class ClimateApiService {
   Future<ClimateOptions> fetchOptions();
   Future<ClimateImpact> fetchImpact(String profileId, String scenarioId);
+  Future<ClimatePortfolio> fetchPortfolio(String scenarioId);
 }
 
 class ClimateApiException implements Exception {
