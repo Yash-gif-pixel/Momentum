@@ -17,6 +17,10 @@ class _RecordingService implements ClimateApiService {
   Future<ClimateOptions> fetchOptions() => _mock.fetchOptions();
 
   @override
+  Future<ClimatePortfolio> fetchPortfolio(String scenarioId) =>
+      _mock.fetchPortfolio(scenarioId);
+
+  @override
   Future<ClimateImpact> fetchImpact(String profileId, String scenarioId) async {
     requests.add((profileId, scenarioId));
     if (fail) {
@@ -154,7 +158,9 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(ClimateRainChart), findsNothing);
     expect(
-      find.textContaining('Daily inflow is estimated from the selected borrower profile.'),
+      find.textContaining(
+        'Daily inflow is estimated from the selected borrower profile.',
+      ),
       findsNothing,
     );
 
@@ -162,7 +168,9 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(ClimateRainChart), findsOneWidget);
     expect(
-      find.textContaining('Daily inflow is estimated from the selected borrower profile.'),
+      find.textContaining(
+        'Daily inflow is estimated from the selected borrower profile.',
+      ),
       findsOneWidget,
     );
   });
