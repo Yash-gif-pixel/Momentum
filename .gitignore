@@ -163,3 +163,6 @@ __pycache__/
 .venv/
 venv/
 *.egg-info/
+.pytest_cache/
+.tools/
+.dart_tool/
