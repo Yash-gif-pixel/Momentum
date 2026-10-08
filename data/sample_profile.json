@@ -1,0 +1,3240 @@
+{
+  "meta": {
+    "profile_id": "MSME0003",
+    "archetype": "tailor_salon",
+    "latent_health_tier": "failing",
+    "is_cash_heavy_edge_case": false,
+    "is_short_history_edge_case": true,
+    "history_start_date": "2026-04-01",
+    "history_end_date": "2026-08-31",
+    "months_available": 5,
+    "split": {
+      "seen_months": 5,
+      "holdout_months": 0,
+      "split_date": null
+    }
+  },
+  "transactions_seen": [
+    {
+      "date": "2026-04-01",
+      "direction": "in",
+      "amount": 500.22,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/621082/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-01",
+      "direction": "in",
+      "amount": 722.21,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-02",
+      "direction": "in",
+      "amount": 529.81,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/964212/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-02",
+      "direction": "in",
+      "amount": 548.26,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-02",
+      "direction": "in",
+      "amount": 421.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/497546/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-02",
+      "direction": "in",
+      "amount": 244.96,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-02",
+      "direction": "out",
+      "amount": 851.0,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/996682/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-04-03",
+      "direction": "in",
+      "amount": 648.34,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-03",
+      "direction": "in",
+      "amount": 501.93,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-04",
+      "direction": "in",
+      "amount": 1860.18,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-04",
+      "direction": "in",
+      "amount": 765.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/562880/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-04",
+      "direction": "in",
+      "amount": 974.91,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/262934/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-05",
+      "direction": "in",
+      "amount": 631.62,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-05",
+      "direction": "in",
+      "amount": 418.39,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF8920",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-05",
+      "direction": "in",
+      "amount": 377.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/132473/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-07",
+      "direction": "in",
+      "amount": 274.71,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/932995/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-07",
+      "direction": "in",
+      "amount": 403.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/242615/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-07",
+      "direction": "in",
+      "amount": 262.65,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/920881/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-07",
+      "direction": "in",
+      "amount": 642.4,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/285350/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-09",
+      "direction": "out",
+      "amount": 922.7,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/685679/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-04-10",
+      "direction": "in",
+      "amount": 809.6,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/333684/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-11",
+      "direction": "in",
+      "amount": 1891.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/609804/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-12",
+      "direction": "in",
+      "amount": 2366.14,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-13",
+      "direction": "in",
+      "amount": 703.56,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/886181/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-13",
+      "direction": "in",
+      "amount": 569.0,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-13",
+      "direction": "in",
+      "amount": 873.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/669021/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-13",
+      "direction": "in",
+      "amount": 348.7,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-14",
+      "direction": "in",
+      "amount": 295.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/367122/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-14",
+      "direction": "in",
+      "amount": 536.97,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-14",
+      "direction": "in",
+      "amount": 171.29,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-14",
+      "direction": "in",
+      "amount": 316.54,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#3654",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-16",
+      "direction": "in",
+      "amount": 1062.92,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-16",
+      "direction": "out",
+      "amount": 998.72,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/551506/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-04-17",
+      "direction": "in",
+      "amount": 20.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/934573/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-17",
+      "direction": "in",
+      "amount": 20.22,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-17",
+      "direction": "in",
+      "amount": 19.17,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/293336/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-18",
+      "direction": "in",
+      "amount": 307.0,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#8868",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-18",
+      "direction": "in",
+      "amount": 143.94,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/770406/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-19",
+      "direction": "out",
+      "amount": 6876.08,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": "NEFT-REF5218",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-19",
+      "direction": "out",
+      "amount": 1507.73,
+      "channel": "upi",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": "UPI/327601/electricity_bill",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-20",
+      "direction": "out",
+      "amount": 1840.9,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/667060/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-04-20",
+      "direction": "out",
+      "amount": 55.02,
+      "channel": "upi",
+      "counterparty_type": "unknown",
+      "category": "batch_settlement",
+      "note": "UPI SETTLEMENT BATCH",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-21",
+      "direction": "in",
+      "amount": 311.57,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/611246/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-21",
+      "direction": "in",
+      "amount": 299.27,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/306893/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-21",
+      "direction": "in",
+      "amount": 95.98,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-21",
+      "direction": "in",
+      "amount": 401.59,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-1176",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-21",
+      "direction": "out",
+      "amount": 1512.56,
+      "channel": "upi",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": "UPI/265122/raw_material",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-22",
+      "direction": "in",
+      "amount": 1212.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/969220/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-23",
+      "direction": "in",
+      "amount": 441.11,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-23",
+      "direction": "in",
+      "amount": 285.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/444379/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-23",
+      "direction": "in",
+      "amount": 635.03,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF9047",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-23",
+      "direction": "out",
+      "amount": 998.84,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/766370/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-04-24",
+      "direction": "in",
+      "amount": 462.43,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/622420/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-24",
+      "direction": "in",
+      "amount": 640.8,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-4432",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-25",
+      "direction": "in",
+      "amount": 290.42,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/460622/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-25",
+      "direction": "in",
+      "amount": 611.32,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/274114/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-25",
+      "direction": "in",
+      "amount": 403.92,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-25",
+      "direction": "in",
+      "amount": 697.94,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/486766/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-26",
+      "direction": "out",
+      "amount": 522.04,
+      "channel": "cash",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": null,
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-04-27",
+      "direction": "in",
+      "amount": 285.6,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/828690/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-27",
+      "direction": "in",
+      "amount": 251.03,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-27",
+      "direction": "in",
+      "amount": 110.89,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-27",
+      "direction": "in",
+      "amount": 268.86,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-28",
+      "direction": "in",
+      "amount": 584.68,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-28",
+      "direction": "in",
+      "amount": 444.93,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-28",
+      "direction": "in",
+      "amount": 544.21,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-28",
+      "direction": "out",
+      "amount": 54.96,
+      "channel": "upi",
+      "counterparty_type": "unknown",
+      "category": "batch_settlement",
+      "note": "UPI SETTLEMENT BATCH",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-29",
+      "direction": "in",
+      "amount": 182.2,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-29",
+      "direction": "in",
+      "amount": 113.52,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/966822/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-29",
+      "direction": "in",
+      "amount": 41.51,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF6002",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-29",
+      "direction": "in",
+      "amount": 150.95,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/819609/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-30",
+      "direction": "in",
+      "amount": 455.87,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF5544",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-30",
+      "direction": "in",
+      "amount": 501.59,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/431799/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-30",
+      "direction": "in",
+      "amount": 419.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/485554/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-30",
+      "direction": "out",
+      "amount": 864.94,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/790564/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-05-01",
+      "direction": "in",
+      "amount": 572.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/422268/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-01",
+      "direction": "in",
+      "amount": 619.41,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/509984/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-01",
+      "direction": "in",
+      "amount": 399.25,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-01",
+      "direction": "in",
+      "amount": 309.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/848444/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-02",
+      "direction": "in",
+      "amount": 302.4,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/302944/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-02",
+      "direction": "in",
+      "amount": 237.91,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/692085/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-02",
+      "direction": "in",
+      "amount": 626.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/986967/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-04",
+      "direction": "in",
+      "amount": 1059.46,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/794810/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-05",
+      "direction": "in",
+      "amount": 601.96,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-05",
+      "direction": "in",
+      "amount": 683.58,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/277543/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-06",
+      "direction": "in",
+      "amount": 548.59,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-06",
+      "direction": "in",
+      "amount": 219.21,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-06",
+      "direction": "in",
+      "amount": 453.92,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF3908",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-07",
+      "direction": "out",
+      "amount": 966.36,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/427618/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-05-08",
+      "direction": "in",
+      "amount": 346.57,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/919137/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-08",
+      "direction": "in",
+      "amount": 506.8,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/385433/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-08",
+      "direction": "in",
+      "amount": 292.25,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/365854/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-08",
+      "direction": "in",
+      "amount": 439.05,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/100376/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-09",
+      "direction": "in",
+      "amount": 1248.83,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#5130",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-09",
+      "direction": "in",
+      "amount": 831.69,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF4181",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-11",
+      "direction": "in",
+      "amount": 1291.12,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/453366/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-11",
+      "direction": "out",
+      "amount": 7253.7,
+      "channel": "upi",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": "UPI/253530/rent",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-11",
+      "direction": "out",
+      "amount": 1416.81,
+      "channel": "cash",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": "LATE PAYMENT",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-12",
+      "direction": "in",
+      "amount": 490.3,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/420739/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-12",
+      "direction": "in",
+      "amount": 483.71,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-12",
+      "direction": "in",
+      "amount": 237.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/234135/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-13",
+      "direction": "in",
+      "amount": 815.79,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/462098/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-13",
+      "direction": "in",
+      "amount": 501.78,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-13",
+      "direction": "in",
+      "amount": 370.81,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-14",
+      "direction": "out",
+      "amount": 962.97,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/635994/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-05-15",
+      "direction": "in",
+      "amount": 615.33,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-15",
+      "direction": "in",
+      "amount": 745.21,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/741233/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-16",
+      "direction": "in",
+      "amount": 466.09,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/715276/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-16",
+      "direction": "in",
+      "amount": 517.71,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/491457/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-17",
+      "direction": "in",
+      "amount": 221.39,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-17",
+      "direction": "in",
+      "amount": 79.56,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/376694/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-17",
+      "direction": "in",
+      "amount": 91.36,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/502904/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-18",
+      "direction": "in",
+      "amount": 448.02,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF8462",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-18",
+      "direction": "in",
+      "amount": 276.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/814050/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-18",
+      "direction": "in",
+      "amount": 137.03,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/941425/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-19",
+      "direction": "in",
+      "amount": 951.6,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-20",
+      "direction": "in",
+      "amount": 204.79,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/530426/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-20",
+      "direction": "in",
+      "amount": 197.66,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#5829",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-20",
+      "direction": "in",
+      "amount": 108.29,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#7459",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-20",
+      "direction": "in",
+      "amount": 371.05,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-21",
+      "direction": "in",
+      "amount": 392.67,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/571400/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-21",
+      "direction": "in",
+      "amount": 512.6,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-21",
+      "direction": "out",
+      "amount": 910.73,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/571252/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-05-25",
+      "direction": "in",
+      "amount": 180.82,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-25",
+      "direction": "in",
+      "amount": 219.84,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/180111/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-25",
+      "direction": "in",
+      "amount": 331.22,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-25",
+      "direction": "in",
+      "amount": 300.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/895720/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-28",
+      "direction": "in",
+      "amount": 1224.63,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/695800/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-05-28",
+      "direction": "out",
+      "amount": 998.4,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/487549/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-05-29",
+      "direction": "in",
+      "amount": 370.76,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-29",
+      "direction": "in",
+      "amount": 254.35,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-30",
+      "direction": "in",
+      "amount": 112.72,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-30",
+      "direction": "in",
+      "amount": 356.05,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-30",
+      "direction": "in",
+      "amount": 349.43,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF7034",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-01",
+      "direction": "in",
+      "amount": 189.93,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-01",
+      "direction": "in",
+      "amount": 42.1,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#8761",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-01",
+      "direction": "in",
+      "amount": 102.41,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-01",
+      "direction": "in",
+      "amount": 96.93,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-2820",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-02",
+      "direction": "in",
+      "amount": 1029.39,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-02",
+      "direction": "in",
+      "amount": 205.75,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#4480",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-04",
+      "direction": "in",
+      "amount": 200.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/701888/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-04",
+      "direction": "in",
+      "amount": 146.75,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/154276/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-04",
+      "direction": "in",
+      "amount": 614.05,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-04",
+      "direction": "in",
+      "amount": 345.32,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-04",
+      "direction": "out",
+      "amount": 865.96,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/507272/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-06-05",
+      "direction": "in",
+      "amount": 434.6,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/963080/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-05",
+      "direction": "in",
+      "amount": 728.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/196646/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-06",
+      "direction": "in",
+      "amount": 524.01,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/464424/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-06",
+      "direction": "in",
+      "amount": 748.47,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-8025",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-06",
+      "direction": "in",
+      "amount": 341.45,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/293038/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-06",
+      "direction": "out",
+      "amount": 370.26,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/410486/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-06-07",
+      "direction": "in",
+      "amount": 2964.5,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF8905",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-09",
+      "direction": "in",
+      "amount": 1115.39,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/712836/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-10",
+      "direction": "in",
+      "amount": 959.45,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/436902/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-10",
+      "direction": "in",
+      "amount": 848.21,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-10",
+      "direction": "out",
+      "amount": 1288.16,
+      "channel": "upi",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": "UPI/357789/raw_material",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-11",
+      "direction": "in",
+      "amount": 145.04,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-11",
+      "direction": "in",
+      "amount": 247.32,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/971733/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-11",
+      "direction": "in",
+      "amount": 249.03,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/417950/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-11",
+      "direction": "out",
+      "amount": 949.66,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/830130/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-06-13",
+      "direction": "in",
+      "amount": 433.66,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/152884/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-13",
+      "direction": "in",
+      "amount": 1765.8,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/741913/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-13",
+      "direction": "in",
+      "amount": 409.26,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-14",
+      "direction": "out",
+      "amount": 7205.14,
+      "channel": "upi",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": "UPI/622623/rent",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-14",
+      "direction": "out",
+      "amount": 1539.55,
+      "channel": "cash",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": "LATE PAYMENT",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-15",
+      "direction": "out",
+      "amount": 23.66,
+      "channel": "upi",
+      "counterparty_type": "unknown",
+      "category": "batch_settlement",
+      "note": "UPI SETTLEMENT BATCH",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-17",
+      "direction": "in",
+      "amount": 1178.3,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/289763/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-17",
+      "direction": "out",
+      "amount": 2106.73,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/510896/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-06-18",
+      "direction": "out",
+      "amount": 911.75,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/314008/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-06-19",
+      "direction": "in",
+      "amount": 20.42,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-19",
+      "direction": "in",
+      "amount": 20.23,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/711960/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-19",
+      "direction": "in",
+      "amount": 36.05,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-21",
+      "direction": "in",
+      "amount": 671.93,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-21",
+      "direction": "in",
+      "amount": 790.5,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-21",
+      "direction": "out",
+      "amount": 27.17,
+      "channel": "upi",
+      "counterparty_type": "unknown",
+      "category": "batch_settlement",
+      "note": "UPI SETTLEMENT BATCH",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-23",
+      "direction": "in",
+      "amount": 150.48,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-23",
+      "direction": "in",
+      "amount": 145.53,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-23",
+      "direction": "in",
+      "amount": 245.64,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/828956/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-23",
+      "direction": "in",
+      "amount": 235.01,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/278524/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-24",
+      "direction": "in",
+      "amount": 274.13,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF6074",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-24",
+      "direction": "in",
+      "amount": 284.2,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-24",
+      "direction": "in",
+      "amount": 404.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/614545/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-25",
+      "direction": "in",
+      "amount": 797.27,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#1215",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-25",
+      "direction": "out",
+      "amount": 848.38,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/462868/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-06-26",
+      "direction": "in",
+      "amount": 295.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/663171/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-26",
+      "direction": "in",
+      "amount": 163.91,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#8906",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-26",
+      "direction": "in",
+      "amount": 332.03,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-26",
+      "direction": "in",
+      "amount": 133.09,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-27",
+      "direction": "in",
+      "amount": 2396.39,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/721678/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-28",
+      "direction": "in",
+      "amount": 1344.6,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#9484",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-28",
+      "direction": "in",
+      "amount": 278.33,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF1688",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-30",
+      "direction": "in",
+      "amount": 213.06,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-30",
+      "direction": "in",
+      "amount": 269.87,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-30",
+      "direction": "in",
+      "amount": 395.85,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#3537",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-30",
+      "direction": "in",
+      "amount": 297.26,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-30",
+      "direction": "out",
+      "amount": 1373.66,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": "NEFT-REF1441",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-01",
+      "direction": "in",
+      "amount": 290.16,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-01",
+      "direction": "in",
+      "amount": 404.7,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-02",
+      "direction": "out",
+      "amount": 993.31,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/335530/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-07-03",
+      "direction": "in",
+      "amount": 1211.22,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-03",
+      "direction": "in",
+      "amount": 486.69,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-04",
+      "direction": "in",
+      "amount": 507.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/187425/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-04",
+      "direction": "in",
+      "amount": 277.24,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-04",
+      "direction": "in",
+      "amount": 355.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/687888/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-04",
+      "direction": "in",
+      "amount": 790.02,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-06",
+      "direction": "in",
+      "amount": 1161.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/233071/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-07",
+      "direction": "in",
+      "amount": 1050.7,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-07",
+      "direction": "out",
+      "amount": 1954.01,
+      "channel": "cash",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": null,
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-07-10",
+      "direction": "in",
+      "amount": 220.49,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF3553",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-10",
+      "direction": "in",
+      "amount": 349.45,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-10",
+      "direction": "in",
+      "amount": 333.2,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/403295/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-10",
+      "direction": "in",
+      "amount": 441.69,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/653722/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-11",
+      "direction": "in",
+      "amount": 2250.53,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-13",
+      "direction": "in",
+      "amount": 1375.99,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF4738",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-13",
+      "direction": "in",
+      "amount": 1.13,
+      "channel": "upi",
+      "counterparty_type": "unknown",
+      "category": "rounding_adjustment",
+      "note": "rounding",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-14",
+      "direction": "in",
+      "amount": 994.7,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-16",
+      "direction": "in",
+      "amount": 848.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/449070/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-16",
+      "direction": "in",
+      "amount": 204.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/711806/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-16",
+      "direction": "in",
+      "amount": 416.5,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/493497/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-16",
+      "direction": "out",
+      "amount": 947.54,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/476435/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "in",
+      "amount": 296.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/278827/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "in",
+      "amount": 266.15,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF8300",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "in",
+      "amount": 338.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/747169/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "in",
+      "amount": 166.69,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-18",
+      "direction": "in",
+      "amount": 567.24,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-18",
+      "direction": "in",
+      "amount": 544.59,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/517500/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-19",
+      "direction": "out",
+      "amount": 6569.06,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": "NEFT-REF3583",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-19",
+      "direction": "out",
+      "amount": 1533.17,
+      "channel": "upi",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": "UPI/378631/electricity_bill",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-20",
+      "direction": "in",
+      "amount": 1300.86,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/782146/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "in",
+      "amount": 300.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/447328/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "in",
+      "amount": 759.97,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#8008",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-23",
+      "direction": "out",
+      "amount": 880.37,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/499583/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-07-24",
+      "direction": "in",
+      "amount": 1091.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/475252/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-25",
+      "direction": "in",
+      "amount": 1043.38,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-25",
+      "direction": "in",
+      "amount": 1067.12,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-26",
+      "direction": "in",
+      "amount": 1089.6,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/990934/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-26",
+      "direction": "in",
+      "amount": 485.78,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#2184",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-27",
+      "direction": "in",
+      "amount": 1281.93,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-28",
+      "direction": "in",
+      "amount": 1255.79,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-29",
+      "direction": "in",
+      "amount": 655.03,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/395174/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-29",
+      "direction": "in",
+      "amount": 695.73,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-8631",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-30",
+      "direction": "in",
+      "amount": 751.26,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/341294/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-30",
+      "direction": "in",
+      "amount": 439.03,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-30",
+      "direction": "out",
+      "amount": 850.97,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/763626/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-07-31",
+      "direction": "in",
+      "amount": 502.21,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-31",
+      "direction": "in",
+      "amount": 310.14,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/591931/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-31",
+      "direction": "in",
+      "amount": 326.63,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-31",
+      "direction": "in",
+      "amount": 196.04,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-01",
+      "direction": "in",
+      "amount": 1600.57,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/406613/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-03",
+      "direction": "in",
+      "amount": 1048.91,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/473314/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-04",
+      "direction": "in",
+      "amount": 368.93,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-04",
+      "direction": "in",
+      "amount": 388.87,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "in",
+      "amount": 1199.89,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-1232",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "in",
+      "amount": 402.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/535508/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "out",
+      "amount": 915.46,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/578908/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-08-07",
+      "direction": "in",
+      "amount": 313.42,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-07",
+      "direction": "in",
+      "amount": 356.16,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-07",
+      "direction": "in",
+      "amount": 377.65,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-07",
+      "direction": "in",
+      "amount": 464.27,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/838998/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-08",
+      "direction": "in",
+      "amount": 558.53,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF2646",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-08",
+      "direction": "in",
+      "amount": 679.38,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-09",
+      "direction": "in",
+      "amount": 427.15,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-09",
+      "direction": "in",
+      "amount": 941.18,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/855390/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-09",
+      "direction": "in",
+      "amount": 748.83,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF7332",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-10",
+      "direction": "in",
+      "amount": 596.3,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-10",
+      "direction": "in",
+      "amount": 1023.05,
+      "channel": "card",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CARD-POS-7776",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-11",
+      "direction": "in",
+      "amount": 363.91,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-11",
+      "direction": "in",
+      "amount": 314.98,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#2734",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-11",
+      "direction": "out",
+      "amount": 430.22,
+      "channel": "cash",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": null,
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-08-11",
+      "direction": "in",
+      "amount": 2.53,
+      "channel": "upi",
+      "counterparty_type": "unknown",
+      "category": "rounding_adjustment",
+      "note": "rounding",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "in",
+      "amount": 180.98,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "in",
+      "amount": 304.33,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#8985",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "in",
+      "amount": 258.65,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "in",
+      "amount": 620.24,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "out",
+      "amount": 6578.79,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": "NEFT-REF8020",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "out",
+      "amount": 1435.52,
+      "channel": "upi",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": "UPI/258148/electricity_bill",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-13",
+      "direction": "in",
+      "amount": 457.66,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-13",
+      "direction": "in",
+      "amount": 248.6,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-13",
+      "direction": "out",
+      "amount": 901.33,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/637415/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-08-14",
+      "direction": "in",
+      "amount": 331.66,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF7529",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-14",
+      "direction": "in",
+      "amount": 412.19,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-14",
+      "direction": "in",
+      "amount": 262.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/547507/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-15",
+      "direction": "in",
+      "amount": 411.22,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-15",
+      "direction": "in",
+      "amount": 492.53,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF8229",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-15",
+      "direction": "in",
+      "amount": 150.69,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/528329/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-15",
+      "direction": "out",
+      "amount": 150.69,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "upi_reversal",
+      "note": "REVERSED",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-17",
+      "direction": "in",
+      "amount": 630.43,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-17",
+      "direction": "in",
+      "amount": 540.64,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-18",
+      "direction": "in",
+      "amount": 1124.75,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/817649/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-19",
+      "direction": "in",
+      "amount": 90.76,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/594362/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-19",
+      "direction": "in",
+      "amount": 239.68,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-20",
+      "direction": "in",
+      "amount": 1289.2,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-20",
+      "direction": "out",
+      "amount": 868.61,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/846615/personal_transfer",
+      "likely_shadow_supplier": true
+    },
+    {
+      "date": "2026-08-21",
+      "direction": "in",
+      "amount": 429.08,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-21",
+      "direction": "in",
+      "amount": 423.65,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-21",
+      "direction": "in",
+      "amount": 277.55,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/724201/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-22",
+      "direction": "in",
+      "amount": 390.02,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/427282/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-22",
+      "direction": "in",
+      "amount": 285.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/350610/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-22",
+      "direction": "in",
+      "amount": 220.65,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF5671",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-22",
+      "direction": "in",
+      "amount": 389.31,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-23",
+      "direction": "in",
+      "amount": 1177.5,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "in",
+      "amount": 155.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/753188/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "in",
+      "amount": 386.61,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF2022",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "in",
+      "amount": 368.63,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/128988/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "out",
+      "amount": 2022.89,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/485126/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "in",
+      "amount": 408.71,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/762091/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "in",
+      "amount": 232.75,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/772129/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "in",
+      "amount": 177.28,
+      "channel": "cheque",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "CHQ#4721",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "in",
+      "amount": 415.89,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "in",
+      "amount": 196.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/796902/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "in",
+      "amount": 303.42,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/471802/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "in",
+      "amount": 523.08,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "in",
+      "amount": 469.33,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "out",
+      "amount": 847.35,
+      "channel": "upi",
+      "counterparty_type": "personal",
+      "category": "personal_transfer",
+      "note": "UPI/300452/personal_transfer",
+      "likely_shadow_supplier": false
+    },
+    {
+      "date": "2026-08-28",
+      "direction": "in",
+      "amount": 128.35,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-28",
+      "direction": "in",
+      "amount": 232.6,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-28",
+      "direction": "in",
+      "amount": 315.78,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-29",
+      "direction": "in",
+      "amount": 1558.88,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-29",
+      "direction": "in",
+      "amount": 1047.6,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/718898/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-30",
+      "direction": "in",
+      "amount": 751.31,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "UPI/888430/service_income",
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-30",
+      "direction": "in",
+      "amount": 474.18,
+      "channel": "cash",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-30",
+      "direction": "in",
+      "amount": 891.06,
+      "channel": "neft",
+      "counterparty_type": "customer",
+      "category": "service_income",
+      "note": "NEFT-REF5369",
+      "likely_shadow_supplier": null
+    }
+  ],
+  "transactions_holdout": []
+}

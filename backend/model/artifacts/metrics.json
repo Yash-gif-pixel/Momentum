@@ -1,0 +1,262 @@
+{
+  "validated_at": "2026-09-18T15:27:31.582906+00:00",
+  "artifact_trained_at": "2026-09-18T15:27:05.750740+00:00",
+  "train_seed": 42,
+  "n_train": 379,
+  "n_test": 127,
+  "auc_test": 0.9595,
+  "coverage": {
+    "n_profiles": 521,
+    "counts": {
+      "SCORED": 506,
+      "LOW_CONFIDENCE": 10,
+      "NOT_ASSESSABLE": 5
+    },
+    "pct": {
+      "SCORED": 97.12,
+      "LOW_CONFIDENCE": 1.92,
+      "NOT_ASSESSABLE": 0.96
+    }
+  },
+  "score_histogram": [
+    {
+      "bucket": "0-10",
+      "count": 48
+    },
+    {
+      "bucket": "10-20",
+      "count": 39
+    },
+    {
+      "bucket": "20-30",
+      "count": 43
+    },
+    {
+      "bucket": "30-40",
+      "count": 38
+    },
+    {
+      "bucket": "40-50",
+      "count": 43
+    },
+    {
+      "bucket": "50-60",
+      "count": 54
+    },
+    {
+      "bucket": "60-70",
+      "count": 60
+    },
+    {
+      "bucket": "70-80",
+      "count": 74
+    },
+    {
+      "bucket": "80-90",
+      "count": 46
+    },
+    {
+      "bucket": "90-100",
+      "count": 61
+    }
+  ],
+  "score_histogram_degenerate": false,
+  "band_cutoffs": {
+    "strong_candidate_max_default_prob": 0.005793813454569752,
+    "high_risk_referral_min_default_prob": 0.4181047891267782,
+    "method": "strong_candidate: predicted default probability at or below the P25 of the validation set's distribution (0.0058). high_risk_referral: at or above the P90 (0.4181), chosen because the base default rate is ~10%, so the top decile of predicted risk is where a reasonably discriminating model should concentrate most actual defaults. manual_review is everything between."
+  },
+  "band_distribution": {
+    "strong_candidate": 145,
+    "manual_review": 313,
+    "high_risk_referral": 48
+  },
+  "reason_code_feature_frequency": {
+    "pct_weeks_with_income": 48,
+    "income_coefficient_of_variation": 92,
+    "longest_dry_streak_days": 63,
+    "trend_last_6_months": 329,
+    "year_over_year_change": 192,
+    "expense_to_income_ratio": 355,
+    "ontime_bill_payment_rate": 445,
+    "cash_buffer_days": 57,
+    "worst_monthly_dip_pct": 15,
+    "months_would_cover_emi_of_last_24": 368
+  },
+  "feature_coefficients": {
+    "pct_weeks_with_income": -0.25307649726871945,
+    "income_coefficient_of_variation": -0.12339869475438713,
+    "longest_dry_streak_days": 0.080090819680477,
+    "trend_last_6_months": 0.4354174754757229,
+    "year_over_year_change": 0.24052240682280493,
+    "expense_to_income_ratio": -0.7309158189404596,
+    "ontime_bill_payment_rate": 0.7403107572371587,
+    "cash_buffer_days": 0.22492000322628758,
+    "worst_monthly_dip_pct": 0.7134638544629585,
+    "months_would_cover_emi_of_last_24": 1.1924630112132588
+  },
+  "stability_check_12_vs_24_months": {
+    "n_checked": 25,
+    "months_compared": [
+      12,
+      24
+    ],
+    "mean_abs_diff": 42.44,
+    "max_abs_diff": 82,
+    "n_swung_more_than_threshold": 20,
+    "swing_threshold": 20,
+    "caveat": "This bypasses the sufficiency gate on purpose: a real 12-month profile is classified LOW_CONFIDENCE by assess_sufficiency and would never reach the model in production (analyze_profile would return vitality_score=null). This check measures the underlying model's raw sensitivity to reduced history, not production behaviour.",
+    "details": [
+      {
+        "profile_id": "MSME0329",
+        "score_24_months": 24,
+        "score_12_months": 2,
+        "diff": 22
+      },
+      {
+        "profile_id": "MSME0454",
+        "score_24_months": 61,
+        "score_12_months": 2,
+        "diff": 59
+      },
+      {
+        "profile_id": "MSME0361",
+        "score_24_months": 76,
+        "score_12_months": 3,
+        "diff": 73
+      },
+      {
+        "profile_id": "MSME0158",
+        "score_24_months": 6,
+        "score_12_months": 1,
+        "diff": 5
+      },
+      {
+        "profile_id": "MSME0185",
+        "score_24_months": 65,
+        "score_12_months": 2,
+        "diff": 63
+      },
+      {
+        "profile_id": "MSME0518",
+        "score_24_months": 12,
+        "score_12_months": 1,
+        "diff": 11
+      },
+      {
+        "profile_id": "MSME0155",
+        "score_24_months": 44,
+        "score_12_months": 2,
+        "diff": 42
+      },
+      {
+        "profile_id": "MSME0270",
+        "score_24_months": 28,
+        "score_12_months": 2,
+        "diff": 26
+      },
+      {
+        "profile_id": "MSME0092",
+        "score_24_months": 31,
+        "score_12_months": 2,
+        "diff": 29
+      },
+      {
+        "profile_id": "MSME0198",
+        "score_24_months": 35,
+        "score_12_months": 2,
+        "diff": 33
+      },
+      {
+        "profile_id": "MSME0306",
+        "score_24_months": 0,
+        "score_12_months": 0,
+        "diff": 0
+      },
+      {
+        "profile_id": "MSME0276",
+        "score_24_months": 39,
+        "score_12_months": 3,
+        "diff": 36
+      },
+      {
+        "profile_id": "MSME0243",
+        "score_24_months": 60,
+        "score_12_months": 2,
+        "diff": 58
+      },
+      {
+        "profile_id": "MSME0062",
+        "score_24_months": 72,
+        "score_12_months": 3,
+        "diff": 69
+      },
+      {
+        "profile_id": "MSME0443",
+        "score_24_months": 69,
+        "score_12_months": 2,
+        "diff": 67
+      },
+      {
+        "profile_id": "MSME0107",
+        "score_24_months": 83,
+        "score_12_months": 2,
+        "diff": 81
+      },
+      {
+        "profile_id": "MSME0377",
+        "score_24_months": 20,
+        "score_12_months": 2,
+        "diff": 18
+      },
+      {
+        "profile_id": "MSME0442",
+        "score_24_months": 46,
+        "score_12_months": 2,
+        "diff": 44
+      },
+      {
+        "profile_id": "MSME0373",
+        "score_24_months": 57,
+        "score_12_months": 2,
+        "diff": 55
+      },
+      {
+        "profile_id": "MSME0125",
+        "score_24_months": 49,
+        "score_12_months": 2,
+        "diff": 47
+      },
+      {
+        "profile_id": "MSME0162",
+        "score_24_months": 7,
+        "score_12_months": 2,
+        "diff": 5
+      },
+      {
+        "profile_id": "MSME0061",
+        "score_24_months": 54,
+        "score_12_months": 3,
+        "diff": 51
+      },
+      {
+        "profile_id": "MSME0233",
+        "score_24_months": 84,
+        "score_12_months": 2,
+        "diff": 82
+      },
+      {
+        "profile_id": "MSME0479",
+        "score_24_months": 28,
+        "score_12_months": 2,
+        "diff": 26
+      },
+      {
+        "profile_id": "MSME0116",
+        "score_24_months": 61,
+        "score_12_months": 2,
+        "diff": 59
+      }
+    ]
+  }
+}

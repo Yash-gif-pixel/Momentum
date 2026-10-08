@@ -1,0 +1,7821 @@
+{
+  "meta": {
+    "profile_id": "demo_uniform_trail",
+    "archetype": "kirana_store",
+    "latent_health_tier": "stable",
+    "is_cash_heavy_edge_case": false,
+    "is_short_history_edge_case": false,
+    "history_start_date": "2024-03-01",
+    "history_end_date": "2026-08-31",
+    "months_available": 30,
+    "split": {
+      "seen_months": 24,
+      "holdout_months": 6,
+      "split_date": "2026-03-01"
+    }
+  },
+  "transactions_seen": [
+    {
+      "date": "2024-03-01",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-02",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-03",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-05",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-05",
+      "direction": "out",
+      "amount": 8985.31,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-05",
+      "direction": "out",
+      "amount": 2191.33,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-06",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-07",
+      "direction": "out",
+      "amount": 17875.71,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-08",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-09",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-10",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-12",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-13",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-14",
+      "direction": "out",
+      "amount": 17911.52,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-15",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-16",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-17",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-19",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-20",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-21",
+      "direction": "out",
+      "amount": 18136.25,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-22",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-23",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-24",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-26",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-27",
+      "direction": "in",
+      "amount": 7439.1,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-03-28",
+      "direction": "out",
+      "amount": 18228.26,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-01",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-02",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-03",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-05",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-05",
+      "direction": "out",
+      "amount": 9033.01,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-05",
+      "direction": "out",
+      "amount": 2192.71,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-06",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-07",
+      "direction": "out",
+      "amount": 17886.04,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-08",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-09",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-10",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-12",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-13",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-14",
+      "direction": "out",
+      "amount": 18266.3,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-15",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-16",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-17",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-19",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-20",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-21",
+      "direction": "out",
+      "amount": 18231.78,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-22",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-23",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-24",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-26",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-27",
+      "direction": "in",
+      "amount": 7615.54,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-04-28",
+      "direction": "out",
+      "amount": 18103.66,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-01",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-02",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-03",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-05",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-05",
+      "direction": "out",
+      "amount": 8892.97,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-05",
+      "direction": "out",
+      "amount": 2215.84,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-06",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-07",
+      "direction": "out",
+      "amount": 18234.13,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-08",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-09",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-10",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-12",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-13",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-14",
+      "direction": "out",
+      "amount": 17730.66,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-15",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-16",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-17",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-19",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-20",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-21",
+      "direction": "out",
+      "amount": 18077.37,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-22",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-23",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-24",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-26",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-27",
+      "direction": "in",
+      "amount": 7632.93,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-05-28",
+      "direction": "out",
+      "amount": 17912.66,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-01",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-02",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-03",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-05",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-05",
+      "direction": "out",
+      "amount": 8893.93,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-05",
+      "direction": "out",
+      "amount": 2210.96,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-06",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-07",
+      "direction": "out",
+      "amount": 17843.23,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-08",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-09",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-10",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-12",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-13",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-14",
+      "direction": "out",
+      "amount": 18000.62,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-15",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-16",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-17",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-19",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-20",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-21",
+      "direction": "out",
+      "amount": 18169.79,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-22",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-23",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-24",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-26",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-27",
+      "direction": "in",
+      "amount": 7586.88,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-06-28",
+      "direction": "out",
+      "amount": 18173.99,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-01",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-02",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-03",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-05",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-05",
+      "direction": "out",
+      "amount": 8874.21,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-05",
+      "direction": "out",
+      "amount": 2207.24,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-06",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-07",
+      "direction": "out",
+      "amount": 18041.37,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-08",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-09",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-10",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-12",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-13",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-14",
+      "direction": "out",
+      "amount": 17771.23,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-15",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-16",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-17",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-19",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-20",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-21",
+      "direction": "out",
+      "amount": 18025.06,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-22",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-23",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-24",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-26",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-27",
+      "direction": "in",
+      "amount": 7610.16,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-07-28",
+      "direction": "out",
+      "amount": 17878.45,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-01",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-02",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-03",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-05",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-05",
+      "direction": "out",
+      "amount": 8998.97,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-05",
+      "direction": "out",
+      "amount": 2203.19,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-06",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-07",
+      "direction": "out",
+      "amount": 17820.75,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-08",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-09",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-10",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-12",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-13",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-14",
+      "direction": "out",
+      "amount": 17967.15,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-15",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-16",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-17",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-19",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-20",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-21",
+      "direction": "out",
+      "amount": 17847.84,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-22",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-23",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-24",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-26",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-27",
+      "direction": "in",
+      "amount": 7675.97,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-08-28",
+      "direction": "out",
+      "amount": 18034.8,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-01",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-02",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-03",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-05",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-05",
+      "direction": "out",
+      "amount": 8913.06,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-05",
+      "direction": "out",
+      "amount": 2229.8,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-06",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-07",
+      "direction": "out",
+      "amount": 18132.61,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-08",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-09",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-10",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-12",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-13",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-14",
+      "direction": "out",
+      "amount": 18019.55,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-15",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-16",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-17",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-19",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-20",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-21",
+      "direction": "out",
+      "amount": 18208.62,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-22",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-23",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-24",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-26",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-27",
+      "direction": "in",
+      "amount": 7541.74,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-09-28",
+      "direction": "out",
+      "amount": 18232.67,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-01",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-02",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-03",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-05",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-05",
+      "direction": "out",
+      "amount": 9131.32,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-05",
+      "direction": "out",
+      "amount": 2232.44,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-06",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-07",
+      "direction": "out",
+      "amount": 17796.9,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-08",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-09",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-10",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-12",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-13",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-14",
+      "direction": "out",
+      "amount": 18180.35,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-15",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-16",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-17",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-19",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-20",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-21",
+      "direction": "out",
+      "amount": 17748.27,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-22",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-23",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-24",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-26",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-27",
+      "direction": "in",
+      "amount": 7614.44,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-10-28",
+      "direction": "out",
+      "amount": 18257.19,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-01",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-02",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-03",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-05",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-05",
+      "direction": "out",
+      "amount": 8936.47,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-05",
+      "direction": "out",
+      "amount": 2184.63,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-06",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-07",
+      "direction": "out",
+      "amount": 17735.78,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-08",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-09",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-10",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-12",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-13",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-14",
+      "direction": "out",
+      "amount": 18107.21,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-15",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-16",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-17",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-19",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-20",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-21",
+      "direction": "out",
+      "amount": 18163.82,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-22",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-23",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-24",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-26",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-27",
+      "direction": "in",
+      "amount": 7701.85,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-11-28",
+      "direction": "out",
+      "amount": 18076.83,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-01",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-02",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-03",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-05",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-05",
+      "direction": "out",
+      "amount": 9041.5,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-05",
+      "direction": "out",
+      "amount": 2199.85,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-06",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-07",
+      "direction": "out",
+      "amount": 17949.23,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-08",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-09",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-10",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-12",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-13",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-14",
+      "direction": "out",
+      "amount": 17945.45,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-15",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-16",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-17",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-19",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-20",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-21",
+      "direction": "out",
+      "amount": 17915.31,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-22",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-23",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-24",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-26",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-27",
+      "direction": "in",
+      "amount": 7678.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2024-12-28",
+      "direction": "out",
+      "amount": 18096.18,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-01",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-02",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-03",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-05",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-05",
+      "direction": "out",
+      "amount": 8961.3,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-05",
+      "direction": "out",
+      "amount": 2202.74,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-06",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-07",
+      "direction": "out",
+      "amount": 18003.31,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-08",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-09",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-10",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-12",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-13",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-14",
+      "direction": "out",
+      "amount": 18059.66,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-15",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-16",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-17",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-19",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-20",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-21",
+      "direction": "out",
+      "amount": 17758.84,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-22",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-23",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-24",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-26",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-27",
+      "direction": "in",
+      "amount": 7757.73,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-01-28",
+      "direction": "out",
+      "amount": 18173.63,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-01",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-02",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-03",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-05",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-05",
+      "direction": "out",
+      "amount": 9022.01,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-05",
+      "direction": "out",
+      "amount": 2228.5,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-06",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-07",
+      "direction": "out",
+      "amount": 18106.52,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-08",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-09",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-10",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-12",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-13",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-14",
+      "direction": "out",
+      "amount": 17811.34,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-15",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-16",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-17",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-19",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-20",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-21",
+      "direction": "out",
+      "amount": 17885.21,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-22",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-23",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-24",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-26",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-27",
+      "direction": "in",
+      "amount": 7701.61,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-02-28",
+      "direction": "out",
+      "amount": 18087.03,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-01",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-02",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-03",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-05",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-05",
+      "direction": "out",
+      "amount": 9109.68,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-05",
+      "direction": "out",
+      "amount": 2227.72,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-06",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-07",
+      "direction": "out",
+      "amount": 17736.86,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-08",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-09",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-10",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-12",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-13",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-14",
+      "direction": "out",
+      "amount": 17881.8,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-15",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-16",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-17",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-19",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-20",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-21",
+      "direction": "out",
+      "amount": 17923.43,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-22",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-23",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-24",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-26",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-27",
+      "direction": "in",
+      "amount": 7817.62,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-03-28",
+      "direction": "out",
+      "amount": 18075.14,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-01",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-02",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-03",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-05",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-05",
+      "direction": "out",
+      "amount": 8952.66,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-05",
+      "direction": "out",
+      "amount": 2227.79,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-06",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-07",
+      "direction": "out",
+      "amount": 17874.05,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-08",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-09",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-10",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-12",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-13",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-14",
+      "direction": "out",
+      "amount": 17960.26,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-15",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-16",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-17",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-19",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-20",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-21",
+      "direction": "out",
+      "amount": 18215.82,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-22",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-23",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-24",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-26",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-27",
+      "direction": "in",
+      "amount": 7717.9,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-04-28",
+      "direction": "out",
+      "amount": 18050.1,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-01",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-02",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-03",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-05",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-05",
+      "direction": "out",
+      "amount": 8888.37,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-05",
+      "direction": "out",
+      "amount": 2232.6,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-06",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-07",
+      "direction": "out",
+      "amount": 17768.65,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-08",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-09",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-10",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-12",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-13",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-14",
+      "direction": "out",
+      "amount": 17782.6,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-15",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-16",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-17",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-19",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-20",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-21",
+      "direction": "out",
+      "amount": 18231.54,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-22",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-23",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-24",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-26",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-27",
+      "direction": "in",
+      "amount": 7837.29,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-05-28",
+      "direction": "out",
+      "amount": 18055.07,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-01",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-02",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-03",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-05",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-05",
+      "direction": "out",
+      "amount": 8900.23,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-05",
+      "direction": "out",
+      "amount": 2224.24,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-06",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-07",
+      "direction": "out",
+      "amount": 18055.45,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-08",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-09",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-10",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-12",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-13",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-14",
+      "direction": "out",
+      "amount": 17979.88,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-15",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-16",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-17",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-19",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-20",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-21",
+      "direction": "out",
+      "amount": 18034.62,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-22",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-23",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-24",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-26",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-27",
+      "direction": "in",
+      "amount": 7774.35,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-06-28",
+      "direction": "out",
+      "amount": 18021.22,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-01",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-02",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-03",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-05",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-05",
+      "direction": "out",
+      "amount": 8966.47,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-05",
+      "direction": "out",
+      "amount": 2167.73,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-06",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-07",
+      "direction": "out",
+      "amount": 18223.16,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-08",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-09",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-10",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-12",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-13",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-14",
+      "direction": "out",
+      "amount": 17806.27,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-15",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-16",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-17",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-19",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-20",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-21",
+      "direction": "out",
+      "amount": 17819.22,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-22",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-23",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-24",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-26",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-27",
+      "direction": "in",
+      "amount": 7925.37,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-07-28",
+      "direction": "out",
+      "amount": 17998.29,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-01",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-02",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-03",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-05",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-05",
+      "direction": "out",
+      "amount": 8938.49,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-05",
+      "direction": "out",
+      "amount": 2219.49,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-06",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-07",
+      "direction": "out",
+      "amount": 18175.15,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-08",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-09",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-10",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-12",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-13",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-14",
+      "direction": "out",
+      "amount": 18083.37,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-15",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-16",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-17",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-19",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-20",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-21",
+      "direction": "out",
+      "amount": 17983.18,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-22",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-23",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-24",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-26",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-27",
+      "direction": "in",
+      "amount": 7858.89,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-08-28",
+      "direction": "out",
+      "amount": 17764.57,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-01",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-02",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-03",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-05",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-05",
+      "direction": "out",
+      "amount": 8939.89,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-05",
+      "direction": "out",
+      "amount": 2224.51,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-06",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-07",
+      "direction": "out",
+      "amount": 17745.21,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-08",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-09",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-10",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-12",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-13",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-14",
+      "direction": "out",
+      "amount": 18061.93,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-15",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-16",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-17",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-19",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-20",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-21",
+      "direction": "out",
+      "amount": 17767.53,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-22",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-23",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-24",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-26",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-27",
+      "direction": "in",
+      "amount": 7810.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-09-28",
+      "direction": "out",
+      "amount": 17780.5,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-01",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-02",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-03",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-05",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-05",
+      "direction": "out",
+      "amount": 9043.22,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-05",
+      "direction": "out",
+      "amount": 2226.94,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-06",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-07",
+      "direction": "out",
+      "amount": 17994.76,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-08",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-09",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-10",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-12",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-13",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-14",
+      "direction": "out",
+      "amount": 17833.85,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-15",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-16",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-17",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-19",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-20",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-21",
+      "direction": "out",
+      "amount": 17998.72,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-22",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-23",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-24",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-26",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-27",
+      "direction": "in",
+      "amount": 7957.98,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-10-28",
+      "direction": "out",
+      "amount": 18210.54,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-01",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-02",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-03",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-05",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-05",
+      "direction": "out",
+      "amount": 8953.35,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-05",
+      "direction": "out",
+      "amount": 2180.45,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-06",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-07",
+      "direction": "out",
+      "amount": 18192.32,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-08",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-09",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-10",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-12",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-13",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-14",
+      "direction": "out",
+      "amount": 18219.94,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-15",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-16",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-17",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-19",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-20",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-21",
+      "direction": "out",
+      "amount": 18194.74,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-22",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-23",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-24",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-26",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-27",
+      "direction": "in",
+      "amount": 7974.33,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-11-28",
+      "direction": "out",
+      "amount": 17864.51,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-01",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-02",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-03",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-05",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-05",
+      "direction": "out",
+      "amount": 8969.37,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-05",
+      "direction": "out",
+      "amount": 2211.01,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-06",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-07",
+      "direction": "out",
+      "amount": 17846.69,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-08",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-09",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-10",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-12",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-13",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-14",
+      "direction": "out",
+      "amount": 18201.87,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-15",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-16",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-17",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-19",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-20",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-21",
+      "direction": "out",
+      "amount": 17936.03,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-22",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-23",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-24",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-26",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-27",
+      "direction": "in",
+      "amount": 8082.51,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2025-12-28",
+      "direction": "out",
+      "amount": 18265.43,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-01",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-02",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-03",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-05",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-05",
+      "direction": "out",
+      "amount": 8943.63,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-05",
+      "direction": "out",
+      "amount": 2181.24,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-06",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-07",
+      "direction": "out",
+      "amount": 17741.77,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-08",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-09",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-10",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-12",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-13",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-14",
+      "direction": "out",
+      "amount": 17861.7,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-15",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-16",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-17",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-19",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-20",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-21",
+      "direction": "out",
+      "amount": 18016.68,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-22",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-23",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-24",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-26",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-27",
+      "direction": "in",
+      "amount": 8004.92,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-01-28",
+      "direction": "out",
+      "amount": 17817.3,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-01",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-02",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-03",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-05",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-05",
+      "direction": "out",
+      "amount": 8971.6,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-05",
+      "direction": "out",
+      "amount": 2196.29,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-06",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-07",
+      "direction": "out",
+      "amount": 17919.28,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-08",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-09",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-10",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-12",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-13",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-14",
+      "direction": "out",
+      "amount": 18134.3,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-15",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-16",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-17",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-19",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-20",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-21",
+      "direction": "out",
+      "amount": 17838.41,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-22",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-23",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-24",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-26",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-27",
+      "direction": "in",
+      "amount": 8011.87,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-02-28",
+      "direction": "out",
+      "amount": 17952.83,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    }
+  ],
+  "transactions_holdout": [
+    {
+      "date": "2026-03-01",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-02",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-03",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-05",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-05",
+      "direction": "out",
+      "amount": 9074.05,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-05",
+      "direction": "out",
+      "amount": 2213.33,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-06",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-07",
+      "direction": "out",
+      "amount": 17976.25,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-08",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-09",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-10",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-12",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-13",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-14",
+      "direction": "out",
+      "amount": 17754.82,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-15",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-16",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-17",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-19",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-20",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-21",
+      "direction": "out",
+      "amount": 18066.89,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-22",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-23",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-24",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-26",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-27",
+      "direction": "in",
+      "amount": 8139.53,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-03-28",
+      "direction": "out",
+      "amount": 18074.73,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-01",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-02",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-03",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-05",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-05",
+      "direction": "out",
+      "amount": 9065.36,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-05",
+      "direction": "out",
+      "amount": 2228.81,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-06",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-07",
+      "direction": "out",
+      "amount": 17912.71,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-08",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-09",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-10",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-12",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-13",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-14",
+      "direction": "out",
+      "amount": 18149.71,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-15",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-16",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-17",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-19",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-20",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-21",
+      "direction": "out",
+      "amount": 17906.71,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-22",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-23",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-24",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-26",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-27",
+      "direction": "in",
+      "amount": 8028.24,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-04-28",
+      "direction": "out",
+      "amount": 17823.79,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-01",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-02",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-03",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-05",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-05",
+      "direction": "out",
+      "amount": 8952.77,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-05",
+      "direction": "out",
+      "amount": 2222.75,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-06",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-07",
+      "direction": "out",
+      "amount": 17930.95,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-08",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-09",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-10",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-12",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-13",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-14",
+      "direction": "out",
+      "amount": 17828.98,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-15",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-16",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-17",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-19",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-20",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-21",
+      "direction": "out",
+      "amount": 17971.25,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-22",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-23",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-24",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-26",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-27",
+      "direction": "in",
+      "amount": 8001.49,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-05-28",
+      "direction": "out",
+      "amount": 18191.92,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-01",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-02",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-03",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-05",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-05",
+      "direction": "out",
+      "amount": 9128.42,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-05",
+      "direction": "out",
+      "amount": 2220.98,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-06",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-07",
+      "direction": "out",
+      "amount": 17794.19,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-08",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-09",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-10",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-12",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-13",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-14",
+      "direction": "out",
+      "amount": 18164.5,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-15",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-16",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-17",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-19",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-20",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-21",
+      "direction": "out",
+      "amount": 17996.27,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-22",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-23",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-24",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-26",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-27",
+      "direction": "in",
+      "amount": 8196.77,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-06-28",
+      "direction": "out",
+      "amount": 17762.35,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-01",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-02",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-03",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-05",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-05",
+      "direction": "out",
+      "amount": 8995.47,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-05",
+      "direction": "out",
+      "amount": 2188.49,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-06",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-07",
+      "direction": "out",
+      "amount": 18111.46,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-08",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-09",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-10",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-12",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-13",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-14",
+      "direction": "out",
+      "amount": 18091.87,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-15",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-16",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-19",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-20",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "out",
+      "amount": 17974.14,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-22",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-23",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-24",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-26",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-27",
+      "direction": "in",
+      "amount": 8251.38,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-07-28",
+      "direction": "out",
+      "amount": 17985.65,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-01",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-02",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-03",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-05",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-05",
+      "direction": "out",
+      "amount": 8921.17,
+      "channel": "neft",
+      "counterparty_type": "rent",
+      "category": "rent",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-05",
+      "direction": "out",
+      "amount": 2227.93,
+      "channel": "neft",
+      "counterparty_type": "utility",
+      "category": "electricity_bill",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-06",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-07",
+      "direction": "out",
+      "amount": 17735.47,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-08",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-09",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-10",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-12",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-13",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-14",
+      "direction": "out",
+      "amount": 18141.96,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-15",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-16",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-17",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-19",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-20",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-21",
+      "direction": "out",
+      "amount": 18100.92,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-22",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-23",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-24",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "in",
+      "amount": 8145.82,
+      "channel": "upi",
+      "counterparty_type": "customer",
+      "category": "sales",
+      "note": null,
+      "likely_shadow_supplier": null
+    },
+    {
+      "date": "2026-08-28",
+      "direction": "out",
+      "amount": 17997.29,
+      "channel": "neft",
+      "counterparty_type": "supplier",
+      "category": "raw_material",
+      "note": null,
+      "likely_shadow_supplier": null
+    }
+  ]
+}
