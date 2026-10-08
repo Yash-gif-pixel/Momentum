@@ -54,8 +54,8 @@ def calculate_impact(profile: Profile, rainfall: list[dict]) -> dict:
     return {
         "daily": [{"date": str(day["date"]), "rain_mm": float(day["rain_mm"]), "disrupted": is_disrupted(float(day["rain_mm"]))} for day in rainfall],
         "disrupted_days": disrupted_days,
-        "baseline_daily_inflow_inr": float(baseline),
-        "estimated_cashflow_impact_inr": float(impact),
+        "baseline_daily_inflow_inr": round(float(baseline), 2),
+        "estimated_cashflow_impact_inr": round(float(impact), 2),
         "impact_pct_of_monthly_inflow": float(pct),
         "suggested_resilience_buffer_inr": buffer,
         "assumptions": assumptions,
