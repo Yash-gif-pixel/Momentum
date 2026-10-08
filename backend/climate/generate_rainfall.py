@@ -13,9 +13,9 @@ PERIOD_START = date(2025, 7, 1)
 DAYS = 30
 SEED = 20250701
 SCENARIOS = (
-    ("normal_monsoon", "Normal monsoon", "Simulated ordinary monsoon rainfall over 30 days.", 19.0, (19.0, 20.0)),
-    ("heavy_rain_week", "Heavy rain week", "Simulated heavy rain on several days in one week.", 22.0, (22.0, 22.5)),
-    ("flash_flood", "Flash flood", "Simulated intense short-duration rainfall event.", 13.0, (13.0, 12.75)),
+    ("normal_monsoon", "Normal monsoon", "Simulated ordinary monsoon rainfall over 30 days near Mumbai.", 19.0, (19.0, 72.75)),
+    ("heavy_rain_week", "Heavy rain week", "Simulated heavy rain on several days in one week near Kolkata.", 22.0, (22.5, 88.25)),
+    ("flash_flood", "Flash flood", "Simulated intense short-duration rainfall event near Chennai.", 13.0, (13.0, 80.25)),
 )
 
 
@@ -35,7 +35,7 @@ def generate() -> None:
                 rain = 142.0
             rows.append({"date": day.isoformat(), "lat": cell[0], "lon": cell[1], "rain_mm": rain})
         with (DATA_DIR / f"rainfall_{scenario_id}.csv").open("w", newline="", encoding="utf-8") as handle:
-            writer = csv.DictWriter(handle, fieldnames=["date", "lat", "lon", "rain_mm"])
+            writer = csv.DictWriter(handle, fieldnames=["date", "lat", "lon", "rain_mm"], lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
         scenarios.append({
