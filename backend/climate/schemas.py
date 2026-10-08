@@ -46,6 +46,8 @@ class ImpactResponse(BaseModel):
 
 class PortfolioBorrower(BaseModel):
     profile_id: str
+    city: str
+    exposed: bool
     baseline_daily_inflow_inr: float
     estimated_cashflow_impact_inr: float
     impact_pct_of_monthly_inflow: float
@@ -59,6 +61,7 @@ class ClimatePortfolioResponse(BaseModel):
     period_end: str
     disrupted_days: int
     borrowers: list[PortfolioBorrower]
+    borrowers_exposed: int
     borrowers_affected: int
     total_estimated_impact_inr: float
     total_suggested_buffer_inr: float

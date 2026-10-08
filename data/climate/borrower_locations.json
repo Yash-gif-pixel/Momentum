@@ -1,0 +1,9 @@
+{
+  "lakshmi_vendor_001": {"city": "Kolkata", "grid_cell": {"lat": 22.5, "lon": 88.25}},
+  "thin_file_002": {"city": "Kolkata", "grid_cell": {"lat": 22.5, "lon": 88.25}},
+  "dormancy_gap_003": {"city": "Kolkata", "grid_cell": {"lat": 22.5, "lon": 88.25}},
+  "ramesh_carpentry_004": {"city": "Mumbai", "grid_cell": {"lat": 19.0, "lon": 72.75}},
+  "meera_tailor_005": {"city": "Mumbai", "grid_cell": {"lat": 19.0, "lon": 72.75}},
+  "arjun_kirana_006": {"city": "Chennai", "grid_cell": {"lat": 13.0, "lon": 80.25}},
+  "uniform_trail_007": {"city": "Chennai", "grid_cell": {"lat": 13.0, "lon": 80.25}}
+}
