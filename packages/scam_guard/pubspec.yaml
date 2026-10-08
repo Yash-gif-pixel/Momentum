@@ -1,0 +1,9 @@
+name: scam_guard
+description: A synchronous, heuristic risk signal SDK for UPI payment warnings.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: ^3.13.3
+dev_dependencies:
+  test: ^1.32.0
+
