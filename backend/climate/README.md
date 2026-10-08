@@ -24,13 +24,39 @@ curl http://localhost:8000/api/climate/scenarios
 curl 'http://localhost:8000/api/climate/impact/lakshmi_vendor_001?scenario_id=heavy_rain_week'
 ```
 
-`GET /api/climate/portfolio?scenario_id={scenario_id}` summarizes the estimate for every demo borrower in the scenario grid cell:
+`GET /api/climate/portfolio?scenario_id={scenario_id}` summarizes the estimate for every demo borrower and marks exposure to the scenario grid cell:
 
 ```bash
 curl 'http://localhost:8000/api/climate/portfolio?scenario_id=heavy_rain_week'
 ```
 
-The portfolio response includes borrower-level estimates, affected-borrower count, aggregate impact and suggested buffers. The real API app mounts these climate routes.
+Borrower locations in `data/climate/borrower_locations.json` are synthetic demo data. Only borrowers whose grid cell matches the scenario are exposed. Every borrower object includes `city` and `exposed`; non-exposed borrowers retain their baseline daily inflow but have zero impact, percentage, and suggested buffer. `borrowers_exposed` counts exposed borrowers, while `borrowers_affected` counts exposed borrowers with positive impact. Portfolio totals sum exposed borrowers only. Missing location entries are shown as city `Unknown` and treated as not exposed.
+
+Example portfolio response excerpt:
+
+```json
+{
+  "scenario_id": "heavy_rain_week",
+  "borrowers_exposed": 3,
+  "borrowers_affected": 3,
+  "borrowers": [
+    {
+      "profile_id": "lakshmi_vendor_001",
+      "city": "Kolkata",
+      "exposed": true,
+      "baseline_daily_inflow_inr": 1000.0,
+      "estimated_cashflow_impact_inr": 2520.0,
+      "impact_pct_of_monthly_inflow": 8.4,
+      "suggested_resilience_buffer_inr": 3000.0
+    }
+  ],
+  "total_estimated_impact_inr": 7000.0,
+  "total_suggested_buffer_inr": 9000.0,
+  "affects_credit_score": false
+}
+```
+
+The values above illustrate the response shape; actual estimates come from the profile transactions and simulated rainfall. The real API app mounts these climate routes.
 
 ## Assumptions and caveats
 

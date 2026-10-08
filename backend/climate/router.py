@@ -21,6 +21,13 @@ def _scenarios() -> list[dict]:
     return json.loads((DATA_DIR / "scenarios.json").read_text(encoding="utf-8"))
 
 
+def _load_borrower_locations() -> dict[str, dict]:
+    return json.loads((DATA_DIR / "borrower_locations.json").read_text(encoding="utf-8"))
+
+
+BORROWER_LOCATIONS = _load_borrower_locations()
+
+
 def _rainfall(scenario_id: str) -> list[dict]:
     path = DATA_DIR / f"rainfall_{scenario_id}.csv"
     if not path.is_file():
@@ -66,19 +73,25 @@ def get_climate_portfolio(scenario_id: str, profiles: dict[str, Profile] = Depen
     disrupted_days = 0
     for profile_id, profile in profiles.items():
         result = calculate_impact(profile, rainfall)
-        assumptions.extend(line for line in result["assumptions"] if line not in assumptions)
         disrupted_days = result["disrupted_days"]
+        location = BORROWER_LOCATIONS.get(profile_id)
+        exposed = bool(location and location.get("grid_cell") == scenario["grid_cell"])
+        if exposed:
+            assumptions.extend(line for line in result["assumptions"] if line not in assumptions)
         borrower_results.append({
             "profile_id": profile_id,
+            "city": location.get("city", "Unknown") if location else "Unknown",
+            "exposed": exposed,
             "baseline_daily_inflow_inr": result["baseline_daily_inflow_inr"],
-            "estimated_cashflow_impact_inr": result["estimated_cashflow_impact_inr"],
-            "impact_pct_of_monthly_inflow": result["impact_pct_of_monthly_inflow"],
-            "suggested_resilience_buffer_inr": result["suggested_resilience_buffer_inr"],
+            "estimated_cashflow_impact_inr": result["estimated_cashflow_impact_inr"] if exposed else 0,
+            "impact_pct_of_monthly_inflow": result["impact_pct_of_monthly_inflow"] if exposed else 0,
+            "suggested_resilience_buffer_inr": result["suggested_resilience_buffer_inr"] if exposed else 0,
         })
-    borrower_results.sort(key=lambda borrower: (-borrower["estimated_cashflow_impact_inr"], borrower["profile_id"]))
-    assumptions.append("Prototype simplification: all demo borrowers are treated as located in this scenario's grid cell.")
-    total_impact = round(sum(borrower["estimated_cashflow_impact_inr"] for borrower in borrower_results), 2)
-    total_buffer = sum(borrower["suggested_resilience_buffer_inr"] for borrower in borrower_results)
+    borrower_results.sort(key=lambda borrower: (not borrower["exposed"], -borrower["estimated_cashflow_impact_inr"], borrower["profile_id"]))
+    assumptions.append("Borrower locations are synthetic demo data; only borrowers in the scenario's grid cell are treated as exposed.")
+    exposed_borrowers = [borrower for borrower in borrower_results if borrower["exposed"]]
+    total_impact = round(sum(borrower["estimated_cashflow_impact_inr"] for borrower in exposed_borrowers), 2)
+    total_buffer = sum(borrower["suggested_resilience_buffer_inr"] for borrower in exposed_borrowers)
     return {
         "scenario_id": scenario_id,
         "grid_cell": scenario["grid_cell"],
@@ -86,7 +99,8 @@ def get_climate_portfolio(scenario_id: str, profiles: dict[str, Profile] = Depen
         "period_end": scenario["period_end"],
         "disrupted_days": disrupted_days,
         "borrowers": borrower_results,
-        "borrowers_affected": sum(borrower["estimated_cashflow_impact_inr"] > 0 for borrower in borrower_results),
+        "borrowers_exposed": len(exposed_borrowers),
+        "borrowers_affected": sum(borrower["estimated_cashflow_impact_inr"] > 0 for borrower in exposed_borrowers),
         "total_estimated_impact_inr": total_impact,
         "total_suggested_buffer_inr": total_buffer,
         "assumptions": assumptions,
