@@ -19,6 +19,7 @@ import 'screens/scam_guard_api_screen.dart';
 import 'widgets/credify_mark.dart';
 import 'widgets/credify_shell_widgets.dart';
 import 'widgets/motion/motion.dart';
+import 'screens/landing/interactive_glow_button.dart';
 import 'features/climate/climate_api_service.dart';
 import 'features/climate/climate_http_service.dart';
 import 'features/climate/mock_climate_service.dart';
@@ -453,38 +454,42 @@ class _NavItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 180),
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          decoration: BoxDecoration(
-            color: active
-                ? tokens.accentA.withValues(alpha: 0.14)
-                : Colors.transparent,
-            borderRadius: BorderRadius.circular(14),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                icon,
-                size: 18,
-                color: active ? tokens.textPrimary : tokens.textTertiary,
-              ),
-              const SizedBox(height: 3),
-              Text(
-                label,
-                style: TextStyle(
+    return InteractiveGlowRegion(
+      borderRadius: BorderRadius.circular(14),
+      glowColor: tokens.accentA,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: onTap,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 180),
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              color: active
+                  ? tokens.accentA.withValues(alpha: 0.14)
+                  : Colors.transparent,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  icon,
+                  size: 18,
                   color: active ? tokens.textPrimary : tokens.textTertiary,
-                  fontSize: 9.5,
-                  fontWeight: FontWeight.w700,
                 ),
-              ),
-            ],
+                const SizedBox(height: 3),
+                Text(
+                  label,
+                  style: TextStyle(
+                    color: active ? tokens.textPrimary : tokens.textTertiary,
+                    fontSize: 9.5,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

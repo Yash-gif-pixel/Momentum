@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme/credify_theme.dart';
 import '../../widgets/credify_shell_widgets.dart';
+import 'interactive_glow_button.dart';
 import 'scroll_timeline.dart';
 
 /// Landing-only palette (dark mode): deep black stage, indigo flower, white
@@ -626,7 +627,7 @@ class _StartFrame extends StatelessWidget {
 
     final primary = SizedBox(
       width: 240,
-      child: CredifyButton(
+      child: InteractiveGlowButton(
         label: 'Open the demo',
         icon: Icons.arrow_forward_rounded,
         onPressed: onEnter,
