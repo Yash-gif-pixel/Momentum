@@ -8,6 +8,7 @@ import '../theme/credify_theme.dart';
 import '../widgets/credify_mark.dart';
 import '../widgets/credify_shell_widgets.dart';
 import 'landing/landing_frames.dart';
+import 'landing/interactive_glow_button.dart';
 import 'landing/momentum_particles.dart';
 import 'landing/scroll_timeline.dart';
 
@@ -274,6 +275,8 @@ class _Stage extends StatelessWidget {
                 // The other theme's layout is prepared ahead of a toggle.
                 warmCount: isDark ? 2600 : 1800,
                 pointer: pointer,
+                // Keep the dot morph animation, but make the dots ignore hover.
+                interactive: false,
               ),
             ),
           ),
@@ -382,10 +385,11 @@ class _TopBar extends StatelessWidget {
                   children: [
                     ThemeTogglePill(isDark: isDark, onToggle: onToggleTheme),
                     const SizedBox(width: 10),
-                    _CompactButton(
+                    InteractiveGlowButton(
                       key: const ValueKey('landing-topbar-enter'),
                       label: 'Open the demo',
-                      onTap: onEnter,
+                      onPressed: onEnter,
+                      compact: true,
                     ),
                   ],
                 ),
@@ -393,43 +397,6 @@ class _TopBar extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _CompactButton extends StatelessWidget {
-  final String label;
-  final VoidCallback onTap;
-
-  const _CompactButton({super.key, required this.label, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    final t = context.tokens;
-    return Semantics(
-      button: true,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(999),
-          onTap: onTap,
-          child: Ink(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
-            decoration: BoxDecoration(
-              gradient: t.accentGradient,
-              borderRadius: BorderRadius.circular(999),
-            ),
-            child: Text(
-              label,
-              style: const TextStyle(
-                fontSize: 12.5,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
       ),
     );
   }
