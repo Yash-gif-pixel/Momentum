@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../models/analyze_response.dart';
 import '../models/persona_meta.dart';
 import '../state/app_state.dart';
 import '../theme/credify_theme.dart';
 import '../widgets/credify_shell_widgets.dart';
+import '../widgets/motion/motion.dart';
 import '../widgets/score_gauge.dart';
 
 class BorrowerScreen extends StatelessWidget {
@@ -37,8 +39,9 @@ class BorrowerScreen extends StatelessWidget {
                   icon: Icons.lock_outline,
                   color: t.warning,
                   title: 'Consent not yet given',
-                  body: 'Go to the Consent tab and approve data sharing, then ask '
-                      'the lender to run the Credify check. Your results will '
+                  body:
+                      'Go to the Consent tab and approve data sharing, then ask '
+                      'the lender to run the Momentum check. Your results will '
                       'appear here.',
                 )
               else if (result == null)
@@ -46,8 +49,9 @@ class BorrowerScreen extends StatelessWidget {
                   icon: Icons.hourglass_empty_outlined,
                   color: t.accentA,
                   title: 'Awaiting assessment',
-                  body: 'Your data has been shared. The lender needs to run the '
-                      'Credify check — results will appear here once it is done.',
+                  body:
+                      'Your data has been shared. The lender needs to run the '
+                      'Momentum check — results will appear here once it is done.',
                 )
               else
                 _BorrowerResult(
@@ -75,14 +79,15 @@ class _BorrowerResult extends StatelessWidget {
 
     if (result.isNotAssessable) {
       return Column(
-        children: [
+        children: staggered([
           _Notice(
             icon: Icons.info_outline,
             color: t.accentA,
             title: "We couldn't assess your signal yet",
-            body: result.coverageReason ??
+            body:
+                result.coverageReason ??
                 'There was not enough transaction history to produce a reliable '
-                    'signal. This is not a rejection — Credify refuses to guess.',
+                    'signal. This is not a rejection — Momentum refuses to guess.',
           ),
           const SizedBox(height: 14),
           GlassCard(
@@ -93,20 +98,24 @@ class _BorrowerResult extends StatelessWidget {
                 Text(
                   'Keep using a bank account or UPI for your business '
                   'transactions. The more months of digital history you build, '
-                  'the stronger the signal Credify can generate.',
+                  'the stronger the signal Momentum can generate.',
                   style: TextStyle(
-                      color: t.textSecondary, fontSize: 13, height: 1.6),
+                    color: t.textSecondary,
+                    fontSize: 13,
+                    height: 1.6,
+                  ),
                 ),
               ],
             ),
           ),
-        ],
+        ]),
       );
     }
 
+    // Cards arrive one after another; the gauge counts up its score.
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: staggered([
         GlassCard(
           margin: const EdgeInsets.only(bottom: 14),
           child: Column(
@@ -185,8 +194,11 @@ class _BorrowerResult extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.rocket_launch_outlined,
-                      color: t.positive, size: 17),
+                  Icon(
+                    Icons.rocket_launch_outlined,
+                    color: t.positive,
+                    size: 17,
+                  ),
                   const SizedBox(width: 8),
                   Text(
                     'One thing you can do to improve',
@@ -202,7 +214,10 @@ class _BorrowerResult extends StatelessWidget {
               Text(
                 _tip(result),
                 style: TextStyle(
-                    color: t.textSecondary, fontSize: 13, height: 1.6),
+                  color: t.textSecondary,
+                  fontSize: 13,
+                  height: 1.6,
+                ),
               ),
             ],
           ),
@@ -222,7 +237,10 @@ class _BorrowerResult extends StatelessWidget {
                   'of the last 24 months your income would have comfortably '
                   'covered an EMI in that range.',
                   style: TextStyle(
-                      color: t.textSecondary, fontSize: 13, height: 1.6),
+                    color: t.textSecondary,
+                    fontSize: 13,
+                    height: 1.6,
+                  ),
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -237,7 +255,7 @@ class _BorrowerResult extends StatelessWidget {
               ],
             ),
           ),
-      ],
+      ]),
     );
   }
 
@@ -259,7 +277,7 @@ class _BorrowerResult extends StatelessWidget {
     }
     if (features.contains('cash_share')) {
       return 'Routing more sales through UPI or bank transfer rather than cash '
-          'gives Credify a clearer picture of your income.';
+          'gives Momentum a clearer picture of your income.';
     }
     return 'Keep your business account active and consistent. Regular digital '
         'transactions over the next 6–12 months build a stronger record.';
@@ -299,7 +317,10 @@ class _PlainPoint extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
-                  color: t.textSecondary, fontSize: 13, height: 1.5),
+                color: t.textSecondary,
+                fontSize: 13,
+                height: 1.5,
+              ),
             ),
           ),
         ],
@@ -348,8 +369,7 @@ class _Notice extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             body,
-            style:
-                TextStyle(color: t.textSecondary, fontSize: 13, height: 1.5),
+            style: TextStyle(color: t.textSecondary, fontSize: 13, height: 1.5),
           ),
         ],
       ),

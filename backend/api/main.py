@@ -48,7 +48,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Credify Vitality Scoring API",
+    title="Momentum API",
     description="Research prototype on synthetic data. Not a lending decision system.",
     lifespan=lifespan,
 )

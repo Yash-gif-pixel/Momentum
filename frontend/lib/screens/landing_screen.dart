@@ -1,426 +1,396 @@
+import 'dart:math' as math;
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+
 import '../theme/credify_theme.dart';
 import '../widgets/credify_mark.dart';
 import '../widgets/credify_shell_widgets.dart';
-import '../widgets/signal_waveform.dart';
+import 'landing/landing_frames.dart';
+import 'landing/momentum_particles.dart';
+import 'landing/scroll_timeline.dart';
 
-/// Landing page. Every figure on this screen is either a real backend value or
-/// an explicit statement that the data is synthetic — no invented metrics.
-class LandingScreen extends StatelessWidget {
+/// Scroll-driven landing: six frames told over a pinned "stage".
+///
+/// The page is a tall scrollable; the stage is positioned at the current
+/// scroll offset so it stays put while scroll progress drives the frame
+/// coordinate (see scroll_timeline.dart). No figures here beyond the copy
+/// the team signed off — nothing invented.
+class LandingScreen extends StatefulWidget {
   final bool isDark;
   final VoidCallback onToggleTheme;
   final VoidCallback onEnter;
+
+  /// Opens the Scam Guard simulation. The button is hidden when null.
+  final VoidCallback? onTrySimulation;
 
   const LandingScreen({
     super.key,
     required this.isDark,
     required this.onToggleTheme,
     required this.onEnter,
+    this.onTrySimulation,
   });
+
+  @override
+  State<LandingScreen> createState() => _LandingScreenState();
+}
+
+const _kNavLabels = [
+  '01 Cover',
+  '02 Problem',
+  '03 Credit',
+  '04 Scam Guard',
+  '05 Climate',
+  '06 Start',
+];
+
+/// Seconds for the one-time cover intro.
+const double _kIntroSeconds = 1.4;
+
+class _LandingScreenState extends State<LandingScreen>
+    with SingleTickerProviderStateMixin {
+  final ScrollController _scroll = ScrollController();
+  final ValueNotifier<double> _coord = ValueNotifier<double>(0);
+  final ValueNotifier<Offset?> _pointer = ValueNotifier<Offset?>(null);
+  final ValueNotifier<double> _intro = ValueNotifier<double>(0);
+  late final Listenable _both = Listenable.merge([_coord, _intro]);
+
+  Ticker? _ticker;
+  Duration _last = Duration.zero;
+  double _target = 0;
+  bool _reduce = false;
+  double _viewportH = 0;
+  double _totalH = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _scroll.addListener(_onScroll);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _reduce = MediaQuery.of(context).disableAnimations;
+    if (_reduce) {
+      _ticker?.stop();
+      _intro.value = 1;
+      _coord.value = _target;
+    } else {
+      _ensureTicking();
+    }
+  }
+
+  double get _travel => math.max(0, _totalH - _viewportH);
+
+  void _onScroll() {
+    if (!_scroll.hasClients) return;
+    _target = sceneCoord(
+      progressFrom(_scroll.offset, _totalH, _viewportH),
+      kLandingScenes,
+      kLandingHold,
+    );
+    if (_reduce) {
+      _coord.value = _target;
+    } else {
+      _ensureTicking();
+    }
+  }
+
+  void _ensureTicking() {
+    _ticker ??= createTicker(_onTick);
+    if (!_ticker!.isActive) {
+      _last = Duration.zero;
+      _ticker!.start();
+    }
+  }
+
+  void _onTick(Duration now) {
+    final dt = math.min((now - _last).inMicroseconds / 1e6, 0.1);
+    _last = now;
+    if (dt <= 0) return;
+
+    if (_intro.value < 1) {
+      _intro.value = clamp01(_intro.value + dt / _kIntroSeconds);
+    }
+    final diff = _target - _coord.value;
+    if (diff.abs() < 1e-4) {
+      if (_coord.value != _target) _coord.value = _target;
+      if (_intro.value >= 1) _ticker!.stop();
+    } else {
+      _coord.value += diff * (1 - math.exp(-dt * 9));
+    }
+  }
+
+  /// Scrolls to frame [k] (0..5).
+  void _goTo(int k) {
+    if (!_scroll.hasClients) return;
+    final offset = k / (kLandingScenes - 1) * _travel;
+    if (_reduce) {
+      _scroll.jumpTo(offset);
+    } else {
+      _scroll.animateTo(
+        offset,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeInOutCubic,
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _ticker?.dispose();
+    _scroll
+      ..removeListener(_onScroll)
+      ..dispose();
+    _coord.dispose();
+    _pointer.dispose();
+    _intro.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
-    final width = MediaQuery.of(context).size.width;
-    final wide = width >= 900;
+    final mq = MediaQuery.of(context);
 
     return Scaffold(
-      body: Stack(
-        children: [
-          const Positioned.fill(child: AmbientBackground()),
-          SafeArea(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.symmetric(
-                horizontal: wide ? 32 : 20,
-                vertical: 16,
-              ),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1080),
-                  child: Column(
-                    children: [
-                      _NavBar(
-                        isDark: isDark,
-                        onToggleTheme: onToggleTheme,
-                        onEnter: onEnter,
-                        wide: wide,
-                      ),
-                      const SizedBox(height: 14),
-                      const _FactStrip(),
-                      SizedBox(height: wide ? 54 : 40),
+      backgroundColor: widget.isDark ? LandingPalette.deepBlack : t.bg,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final size = constraints.biggest;
+          final vh = size.height;
+          final totalH = vh * (1 + (kLandingScenes - 1) * kSceneScroll);
+          if (vh != _viewportH || totalH != _totalH) {
+            _viewportH = vh;
+            _totalH = totalH;
+            // Window resized: recompute the frame for the same offset.
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted) _onScroll();
+            });
+          }
+          final layout = LandingLayout(size, mq.padding);
 
-                      // ── Hero ───────────────────────────────────────────
-                      const HeroPill(
-                        icon: Icons.science_outlined,
-                        label: 'RESEARCH PROTOTYPE · SYNTHETIC DATA',
-                      ),
-                      const SizedBox(height: 22),
-                      _HeroTitle(wide: wide, tokens: t),
-                      const SizedBox(height: 18),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 620),
-                        child: Text(
-                          'Ten predictive cash-flow features read from 24 months '
-                          'of Account-Aggregator-style transaction history, '
-                          'scored by a transparent logistic scorecard. Built for '
-                          'MSMEs a bureau has never heard of.',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: t.textSecondary,
-                            height: 1.6,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: wide ? 56 : 42),
+          final stage = LandingScope(
+            coord: _coord,
+            intro: _intro,
+            both: _both,
+            reduceMotion: _reduce,
+            child: _Stage(
+              layout: layout,
+              coord: _coord,
+              pointer: _pointer,
+              isDark: widget.isDark,
+              onToggleTheme: widget.onToggleTheme,
+              onEnter: widget.onEnter,
+              onTrySimulation: widget.onTrySimulation,
+              onGoTo: _goTo,
+            ),
+          );
 
-                      // ── Signal visualiser ──────────────────────────────
-                      _SignalCard(wide: wide),
-                      SizedBox(height: wide ? 72 : 52),
-
-                      // ── Pillars ────────────────────────────────────────
-                      Text(
-                        'HOW THE SIGNAL IS BUILT',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.2,
-                          color: t.accentA,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        'Scoring a borrower with\nno bureau record.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: wide ? 32 : 26,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: -1,
-                          height: 1.15,
-                          color: t.textPrimary,
-                        ),
-                      ),
-                      const SizedBox(height: 28),
-                      const _Pillars(),
-                      SizedBox(height: wide ? 72 : 52),
-
-                      // ── Closing ────────────────────────────────────────
-                      Text(
-                        'Assessable is not the same\nas safe.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: wide ? 30 : 25,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: -1,
-                          height: 1.2,
-                          color: t.textPrimary,
-                        ),
-                      ),
-                      const SizedBox(height: 14),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 520),
-                        child: Text(
-                          'Credify returns a score, the reasons behind it, and '
-                          'an honest refusal when the data is too thin. The '
-                          'lending decision stays with the lender.',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: t.textSecondary,
-                            height: 1.55,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 26),
-                      SizedBox(
-                        width: 240,
-                        child: CredifyButton(
-                          label: 'Open the demo',
-                          icon: Icons.arrow_forward_rounded,
-                          onPressed: onEnter,
-                        ),
-                      ),
-                      const SizedBox(height: 40),
-                    ],
+          return SingleChildScrollView(
+            controller: _scroll,
+            child: SizedBox(
+              width: size.width,
+              height: totalH,
+              child: Stack(
+                children: [
+                  // Only the stage's position follows the scroll; its
+                  // contents listen to the frame coordinate instead.
+                  AnimatedBuilder(
+                    animation: _scroll,
+                    child: stage,
+                    builder: (context, child) {
+                      final offset = _scroll.hasClients
+                          ? _scroll.offset
+                                .clamp(0.0, math.max(0.0, totalH - vh))
+                                .toDouble()
+                          : 0.0;
+                      return Positioned(
+                        top: offset,
+                        left: 0,
+                        width: size.width,
+                        height: vh,
+                        child: child!,
+                      );
+                    },
                   ),
-                ),
+                ],
               ),
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
 }
 
-class _HeroTitle extends StatelessWidget {
-  final bool wide;
-  final CredifyTokens tokens;
+class _Stage extends StatelessWidget {
+  final LandingLayout layout;
+  final ValueNotifier<double> coord;
 
-  const _HeroTitle({required this.wide, required this.tokens});
-
-  @override
-  Widget build(BuildContext context) {
-    final size = wide ? 52.0 : 36.0;
-    return Column(
-      children: [
-        Text(
-          'Credit signal for the',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: size,
-            fontWeight: FontWeight.w800,
-            letterSpacing: -1.8,
-            height: 1.1,
-            color: tokens.textPrimary,
-          ),
-        ),
-        ShaderMask(
-          shaderCallback: (b) => LinearGradient(
-            colors: [tokens.accentA, tokens.accentB],
-          ).createShader(b),
-          child: Text(
-            'credit invisible.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: size,
-              fontWeight: FontWeight.w800,
-              letterSpacing: -1.8,
-              height: 1.1,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _NavBar extends StatelessWidget {
+  /// Mouse position (global) over the stage, for the particles to react to.
+  final ValueNotifier<Offset?> pointer;
   final bool isDark;
   final VoidCallback onToggleTheme;
   final VoidCallback onEnter;
-  final bool wide;
+  final VoidCallback? onTrySimulation;
+  final ValueChanged<int> onGoTo;
 
-  const _NavBar({
+  const _Stage({
+    required this.layout,
+    required this.coord,
+    required this.pointer,
     required this.isDark,
     required this.onToggleTheme,
     required this.onEnter,
-    required this.wide,
+    required this.onTrySimulation,
+    required this.onGoTo,
   });
 
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
-    return Row(
-      children: [
-        Container(
-          width: 32,
-          height: 32,
-          decoration: BoxDecoration(
-            gradient: t.accentGradient,
-            borderRadius: BorderRadius.circular(10),
+    final l = layout;
+    // The whole stage reports the mouse, so dots react even under the text.
+    return MouseRegion(
+      opaque: false,
+      onHover: (e) => pointer.value = e.position,
+      onExit: (_) => pointer.value = null,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: ColoredBox(color: isDark ? LandingPalette.deepBlack : t.bg),
           ),
-          child: const Center(child: CredifyMark(size: 21)),
-        ),
-        const SizedBox(width: 10),
-        Text(
-          'Credify',
-          style: TextStyle(
-            fontSize: 19,
-            fontWeight: FontWeight.w800,
-            letterSpacing: -0.5,
-            color: t.textPrimary,
-          ),
-        ),
-        if (wide) ...[
-          const SizedBox(width: 10),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-            decoration: BoxDecoration(
-              color: t.negative.withValues(alpha: 0.14),
-              borderRadius: BorderRadius.circular(6),
-              border:
-                  Border.all(color: t.negative.withValues(alpha: 0.3)),
-            ),
-            child: Text(
-              'PROTOTYPE',
-              style: TextStyle(
-                fontSize: 9.5,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.6,
-                color: t.negative,
+          Positioned.fill(
+            child: ExcludeSemantics(
+              // Dense enough for the ₹ on the cover coin to read clearly. Light
+              // mode needs more: the dots read fainter on the pale background.
+              child: MomentumParticles(
+                coord: coord,
+                count: isDark ? 1800 : 2600,
+                // The other theme's layout is prepared ahead of a toggle.
+                warmCount: isDark ? 2600 : 1800,
+                pointer: pointer,
               ),
             ),
           ),
+          Positioned.fill(
+            child: LandingFrames(
+              layout: l,
+              onEnter: onEnter,
+              onTrySimulation: onTrySimulation,
+            ),
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: l.safe.bottom + 10,
+            child: _ScrollHint(coord: coord),
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            top: 0,
+            child: _TopBar(
+              layout: l,
+              isDark: isDark,
+              onToggleTheme: onToggleTheme,
+              onEnter: onEnter,
+            ),
+          ),
+          if (!l.narrow)
+            Positioned(
+              right: math.max(14, l.pad * 0.4),
+              top: l.topBar,
+              bottom: l.bottomPad,
+              child: Center(
+                child: _FrameNav(coord: coord, onGoTo: onGoTo),
+              ),
+            ),
         ],
-        const Spacer(),
-        ThemeTogglePill(isDark: isDark, onToggle: onToggleTheme),
-      ],
+      ),
     );
   }
 }
 
-/// Only verifiable facts here — model metrics and the data source.
-class _FactStrip extends StatelessWidget {
-  const _FactStrip();
+class _TopBar extends StatelessWidget {
+  final LandingLayout layout;
+  final bool isDark;
+  final VoidCallback onToggleTheme;
+  final VoidCallback onEnter;
+
+  const _TopBar({
+    required this.layout,
+    required this.isDark,
+    required this.onToggleTheme,
+    required this.onEnter,
+  });
 
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
-    return GlassCard(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      radius: 12,
-      child: Wrap(
-        spacing: 22,
-        runSpacing: 8,
-        alignment: WrapAlignment.center,
-        crossAxisAlignment: WrapCrossAlignment.center,
+    final l = layout;
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        l.narrow ? 16 : l.pad,
+        l.safe.top + 16,
+        l.narrow ? 16 : l.pad,
+        0,
+      ),
+      child: Row(
         children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 6,
-                height: 6,
-                decoration:
-                    BoxDecoration(color: t.accentA, shape: BoxShape.circle),
-              ),
-              const SizedBox(width: 6),
-              Text(
-                'MODEL CARD',
+          Container(
+            width: 32,
+            height: 32,
+            decoration: BoxDecoration(
+              gradient: t.accentGradient,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Center(child: CredifyMark(size: 21)),
+          ),
+          const SizedBox(width: 10),
+          Flexible(
+            flex: 2,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'MOMENTUM',
                 style: TextStyle(
-                  fontSize: 10.5,
-                  fontWeight: FontWeight.w700,
-                  color: t.textSecondary,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.8,
+                  color: t.textPrimary,
                 ),
               ),
-            ],
-          ),
-          _fact(context, 'PROFILES', '521'),
-          _fact(context, 'FEATURES', '10'),
-          _fact(context, 'HOLDOUT AUC', '0.96'),
-          _fact(context, 'DATA', 'Synthetic'),
-        ],
-      ),
-    );
-  }
-
-  Widget _fact(BuildContext context, String label, String value) {
-    final t = context.tokens;
-    return Text.rich(
-      TextSpan(
-        text: '$label: ',
-        style: TextStyle(fontSize: 10.5, color: t.textTertiary),
-        children: [
-          TextSpan(
-            text: value,
-            style: TextStyle(
-              fontSize: 10.5,
-              fontWeight: FontWeight.w700,
-              color: t.accentA,
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SignalCard extends StatelessWidget {
-  final bool wide;
-  const _SignalCard({required this.wide});
-
-  @override
-  Widget build(BuildContext context) {
-    final t = context.tokens;
-
-    final metrics = Column(
-      children: [
-        _MetricTile(
-          icon: Icons.show_chart_rounded,
-          title: 'VITALITY SIGNAL',
-          value: '91.0',
-          sub: '/ 100',
-          detail:
-              'Lakshmi, a street food vendor with no bureau file — scored from '
-              'transaction behaviour alone.',
-          accent: t.positive,
-        ),
-        const SizedBox(height: 12),
-        _MetricTile(
-          icon: Icons.block_rounded,
-          title: 'SUFFICIENCY GATE',
-          value: 'NOT ASSESSABLE',
-          sub: '',
-          detail:
-              'A 4-month thin file returns no score at all. Refusing to guess '
-              'is a feature, not a failure.',
-          accent: t.negative,
-        ),
-      ],
-    );
-
-    return GlassCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(Icons.graphic_eq_rounded, color: t.accentA, size: 19),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          const SizedBox(width: 10),
+          // Scales down instead of overflowing on very narrow windows.
+          Expanded(
+            flex: 3,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerRight,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      'Cash flow where a bureau sees nothing',
-                      style: TextStyle(
-                        fontSize: 15.5,
-                        fontWeight: FontWeight.w700,
-                        color: t.textPrimary,
-                      ),
-                    ),
-                    Text(
-                      'Simulated Account Aggregator ingestion',
-                      style:
-                          TextStyle(fontSize: 11, color: t.textSecondary),
+                    ThemeTogglePill(isDark: isDark, onToggle: onToggleTheme),
+                    const SizedBox(width: 10),
+                    _CompactButton(
+                      key: const ValueKey('landing-topbar-enter'),
+                      label: 'Open the demo',
+                      onTap: onEnter,
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          if (wide)
-            IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Expanded(flex: 3, child: SignalWaveform()),
-                  const SizedBox(width: 18),
-                  Expanded(flex: 2, child: metrics),
-                ],
-              ),
-            )
-          else ...[
-            const SignalWaveform(),
-            const SizedBox(height: 16),
-            metrics,
-          ],
-          const SizedBox(height: 20),
-          Divider(color: t.hairline, height: 1),
-          const SizedBox(height: 16),
-          Wrap(
-            spacing: 26,
-            runSpacing: 12,
-            children: const [
-              _Status(label: 'MODEL', value: 'Logistic scorecard'),
-              _Status(label: 'EXPLAINABILITY', value: 'Per-feature reason codes'),
-              _Status(label: 'BUREAU DEPENDENCY', value: 'None'),
-              _Status(label: 'OUTCOMES', value: 'Scored / Low conf. / Gated'),
-            ],
+            ),
           ),
         ],
       ),
@@ -428,238 +398,157 @@ class _SignalCard extends StatelessWidget {
   }
 }
 
-class _Status extends StatelessWidget {
+class _CompactButton extends StatelessWidget {
   final String label;
-  final String value;
-  const _Status({required this.label, required this.value});
+  final VoidCallback onTap;
+
+  const _CompactButton({super.key, required this.label, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(label,
-            style: TextStyle(
-                fontSize: 9, fontWeight: FontWeight.w600, color: t.textTertiary)),
-        const SizedBox(height: 3),
-        Text(value,
-            style: TextStyle(
-                fontSize: 11.5,
+    return Semantics(
+      button: true,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(999),
+          onTap: onTap,
+          child: Ink(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+            decoration: BoxDecoration(
+              gradient: t.accentGradient,
+              borderRadius: BorderRadius.circular(999),
+            ),
+            child: Text(
+              label,
+              style: const TextStyle(
+                fontSize: 12.5,
                 fontWeight: FontWeight.w700,
-                color: t.textPrimary)),
-      ],
-    );
-  }
-}
-
-class _MetricTile extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String value;
-  final String sub;
-  final String detail;
-  final Color accent;
-
-  const _MetricTile({
-    required this.icon,
-    required this.title,
-    required this.value,
-    required this.sub,
-    required this.detail,
-    required this.accent,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final t = context.tokens;
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: t.hairline,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: t.glassBorder),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 9.5,
-                    fontWeight: FontWeight.w700,
-                    color: t.textSecondary,
-                  ),
-                ),
+                color: Colors.white,
               ),
-              Icon(icon, size: 13, color: accent),
-            ],
+            ),
           ),
-          const SizedBox(height: 7),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-            children: [
-              Flexible(
-                child: Text(
-                  value,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: value.length > 8 ? 15 : 22,
-                    fontWeight: FontWeight.w800,
-                    color: accent,
-                  ),
-                ),
-              ),
-              if (sub.isNotEmpty) ...[
-                const SizedBox(width: 6),
-                Text(sub,
-                    style:
-                        TextStyle(fontSize: 11, color: t.textTertiary)),
-              ],
-            ],
-          ),
-          const SizedBox(height: 7),
-          Text(
-            detail,
-            style: TextStyle(
-                fontSize: 11, color: t.textSecondary, height: 1.45),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _Pillars extends StatelessWidget {
-  const _Pillars();
-
-  static const _items = [
-    (
-      Icons.insights_rounded,
-      'Ten predictive features',
-      'Inflow consistency, return rate, dormancy, buffer days and more — read '
-          'from months 1–24 of transaction history. Twelve are extracted; two '
-          'are withheld from the model on purpose, and no demographic or '
-          'geographic field can ever become a feature.',
-      'Fairness enforced by test',
-    ),
-    (
-      Icons.rule_folder_outlined,
-      'Coefficients become reasons',
-      'A logistic scorecard was chosen over a boosted ensemble precisely so '
-          'each weight maps to a sentence a credit officer can read and argue '
-          'with.',
-      'Per-feature reason codes',
-    ),
-    (
-      Icons.shield_outlined,
-      'A gate on data, not on risk',
-      'Outcomes gate on whether there is enough history to judge — never on how '
-          'risky the business looks. A risky but well-documented borrower still '
-          'gets scored.',
-      'Scored · Low confidence · Gated',
-    ),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    final wide = MediaQuery.of(context).size.width >= 900;
-    if (!wide) {
-      return Column(
-        children: [
-          for (var i = 0; i < _items.length; i++) ...[
-            if (i > 0) const SizedBox(height: 12),
-            _PillarCard(item: _items[i]),
-          ],
-        ],
-      );
-    }
-    return IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          for (var i = 0; i < _items.length; i++) ...[
-            if (i > 0) const SizedBox(width: 16),
-            Expanded(child: _PillarCard(item: _items[i])),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-/// Hover reads as depth, not affordance: these cards are not tap targets, so
-/// the cursor stays an arrow and there is no ripple. Promising a click they
-/// do not honour would be worse than no hover at all.
-///
-/// Each card owns its own hover state, so the three light independently.
-class _PillarCard extends StatelessWidget {
-  final (IconData, String, String, String) item;
-  const _PillarCard({required this.item});
-
-  @override
-  Widget build(BuildContext context) {
-    final t = context.tokens;
-    return HoverLift(
-      builder: (context, hovered) => GlassCard(
-        padding: const EdgeInsets.all(22),
-        borderColor: hovered ? t.accentA.withValues(alpha: 0.42) : null,
-        transitionDuration: const Duration(milliseconds: 200),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              curve: Curves.easeOutCubic,
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: t.accentA.withValues(alpha: hovered ? 0.26 : 0.14),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(item.$1, color: t.accentA, size: 19),
-            ),
-            const SizedBox(height: 18),
-            Text(
-              item.$2,
-              style: TextStyle(
-                fontSize: 15.5,
-                fontWeight: FontWeight.w700,
-                color: t.textPrimary,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              item.$3,
-              style: TextStyle(
-                  fontSize: 12.5, color: t.textSecondary, height: 1.55),
-            ),
-            const SizedBox(height: 18),
-            Row(
-              children: [
-                Flexible(
-                  child: Text(
-                    item.$4,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      color: t.accentA,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
         ),
       ),
     );
   }
 }
 
+class _ScrollHint extends StatelessWidget {
+  final ValueListenable<double> coord;
+  const _ScrollHint({required this.coord});
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    return IgnorePointer(
+      child: ValueListenableBuilder<double>(
+        valueListenable: coord,
+        builder: (context, c, child) =>
+            Opacity(opacity: clamp01(1 - c * 3), child: child),
+        child: Center(
+          child: Text(
+            'Scroll ↓',
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.2,
+              color: t.textTertiary,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _FrameNav extends StatelessWidget {
+  final ValueListenable<double> coord;
+  final ValueChanged<int> onGoTo;
+
+  const _FrameNav({required this.coord, required this.onGoTo});
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<double>(
+      valueListenable: coord,
+      builder: (context, c, _) {
+        final active = c.round().clamp(0, kLandingScenes - 1);
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            for (var i = 0; i < _kNavLabels.length; i++)
+              _NavTick(
+                key: ValueKey('landing-nav-$i'),
+                label: _kNavLabels[i],
+                active: i == active,
+                onTap: () => onGoTo(i),
+              ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _NavTick extends StatefulWidget {
+  final String label;
+  final bool active;
+  final VoidCallback onTap;
+
+  const _NavTick({
+    super.key,
+    required this.label,
+    required this.active,
+    required this.onTap,
+  });
+
+  @override
+  State<_NavTick> createState() => _NavTickState();
+}
+
+class _NavTickState extends State<_NavTick> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    final reduce = MediaQuery.of(context).disableAnimations;
+    final d = reduce ? Duration.zero : const Duration(milliseconds: 220);
+    return Semantics(
+      button: true,
+      selected: widget.active,
+      label: widget.label,
+      child: ExcludeSemantics(
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          onEnter: (_) => setState(() => _hover = true),
+          onExit: (_) => setState(() => _hover = false),
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: widget.onTap,
+            // Names only: the active frame is bold and in the label colour,
+            // the rest dim and brighten on hover.
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: AnimatedDefaultTextStyle(
+                duration: d,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: widget.active ? FontWeight.w700 : FontWeight.w500,
+                  letterSpacing: 0.4,
+                  color: widget.active
+                      ? LandingPalette.label(context)
+                      : (_hover ? t.textSecondary : t.textTertiary),
+                ),
+                child: Text(widget.label, textAlign: TextAlign.right),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
