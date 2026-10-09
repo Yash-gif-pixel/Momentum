@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme/credify_theme.dart';
 import 'climate_api_service.dart';
+import 'climate_borrower_tip.dart';
 import 'climate_http_service.dart';
 import 'climate_portfolio_panel.dart';
 import 'climate_screen.dart';
@@ -26,7 +27,7 @@ void main() {
       darkTheme: CredifyTheme.dark,
       themeMode: ThemeMode.dark,
       home: DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             title: const Text('Climate Impact'),
@@ -35,6 +36,7 @@ void main() {
                 Tab(text: 'Full screen'),
                 Tab(text: 'Borrower card'),
                 Tab(text: 'Portfolio'),
+                Tab(text: 'Borrower tip'),
               ],
             ),
           ),
@@ -43,6 +45,7 @@ void main() {
               ClimateScreen(service: service),
               _BorrowerCardPreview(service: service),
               _PortfolioPreview(service: service),
+              _BorrowerTipPreview(service: service),
             ],
           ),
         ),
@@ -84,5 +87,19 @@ class _PortfolioPreview extends StatelessWidget {
   Widget build(BuildContext context) => ListView(
     padding: const EdgeInsets.all(16),
     children: [ClimatePortfolioPanel(service: service)],
+  );
+}
+
+class _BorrowerTipPreview extends StatelessWidget {
+  const _BorrowerTipPreview({required this.service});
+
+  final ClimateApiService service;
+
+  @override
+  Widget build(BuildContext context) => ListView(
+    padding: const EdgeInsets.all(16),
+    children: [
+      ClimateBorrowerTip(service: service, profileId: 'lakshmi_vendor_001'),
+    ],
   );
 }

@@ -5,6 +5,7 @@ import '../../theme/credify_theme.dart';
 import 'climate_api_service.dart';
 import 'climate_models.dart';
 import 'climate_rain_chart.dart';
+import 'climate_scenario_comparison.dart';
 
 class ClimateStressCard extends StatefulWidget {
   const ClimateStressCard({
@@ -36,6 +37,7 @@ class _ClimateStressCardState extends State<ClimateStressCard> {
   bool _loadingOptions = true;
   bool _loadingImpact = false;
   bool _detailsExpanded = false;
+  bool _compareExpanded = false;
   int _requestId = 0;
 
   @override
@@ -50,6 +52,7 @@ class _ClimateStressCardState extends State<ClimateStressCard> {
     if (oldWidget.profileId != widget.profileId &&
         _options != null &&
         _scenarioId != null) {
+      _compareExpanded = false;
       _fetchImpact();
     }
   }
@@ -212,20 +215,36 @@ class _ClimateStressCardState extends State<ClimateStressCard> {
               ),
               const SizedBox(height: 10),
               _scoreBadge(impact, tokens),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: TextButton.icon(
-                  onPressed: () =>
-                      setState(() => _detailsExpanded = !_detailsExpanded),
-                  icon: Icon(
-                    _detailsExpanded ? Icons.expand_less : Icons.expand_more,
+              Wrap(
+                spacing: 16,
+                children: [
+                  TextButton.icon(
+                    onPressed: () =>
+                        setState(() => _detailsExpanded = !_detailsExpanded),
+                    icon: Icon(
+                      _detailsExpanded ? Icons.expand_less : Icons.expand_more,
+                    ),
+                    label: Text(_detailsExpanded ? 'Hide details' : 'Details'),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      visualDensity: VisualDensity.compact,
+                    ),
                   ),
-                  label: Text(_detailsExpanded ? 'Hide details' : 'Details'),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    visualDensity: VisualDensity.compact,
+                  TextButton.icon(
+                    onPressed: () =>
+                        setState(() => _compareExpanded = !_compareExpanded),
+                    icon: const Icon(Icons.stacked_bar_chart),
+                    label: Text(
+                      _compareExpanded
+                          ? 'Hide comparison'
+                          : 'Compare scenarios',
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      visualDensity: VisualDensity.compact,
+                    ),
                   ),
-                ),
+                ],
               ),
               if (_detailsExpanded) ...[
                 ClimateRainChart(daily: impact.daily, height: 160),
@@ -240,6 +259,25 @@ class _ClimateStressCardState extends State<ClimateStressCard> {
                     child: Text('• $assumption'),
                   ),
               ],
+            ],
+            if (_compareExpanded) ...[
+              const SizedBox(height: 8),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 280),
+                child: SingleChildScrollView(
+                  child: ClimateScenarioComparison(
+                    service: widget.service,
+                    profileId: widget.profileId,
+                    scenarios: scenarios,
+                    selectedScenarioId: _scenarioId ?? '',
+                    onSelect: (scenarioId) {
+                      if (scenarioId == _scenarioId) return;
+                      setState(() => _scenarioId = scenarioId);
+                      _fetchImpact();
+                    },
+                  ),
+                ),
+              ),
             ],
           ],
         ),

@@ -174,4 +174,32 @@ void main() {
       findsOneWidget,
     );
   });
+
+  testWidgets('Compare scenarios is available and starts collapsed', (
+    tester,
+  ) async {
+    await tester.pumpWidget(_app(MockClimateService()));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Compare scenarios'), findsOneWidget);
+    expect(find.text('Comparing scenarios…'), findsNothing);
+  });
+
+  testWidgets('comparison selection updates the card scenario and impact', (
+    tester,
+  ) async {
+    await tester.pumpWidget(_app(MockClimateService()));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Compare scenarios'));
+    await tester.pumpAndSettle();
+    expect(find.text('13 disrupted days'), findsOneWidget);
+
+    await tester.ensureVisible(find.byType(InkWell).last);
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(InkWell).last);
+    await tester.pumpAndSettle();
+
+    expect(find.text('≈ ₹16,380 possible shortfall'), findsOneWidget);
+  });
 }
