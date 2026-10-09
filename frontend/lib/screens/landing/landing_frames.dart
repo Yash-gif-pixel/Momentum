@@ -374,22 +374,6 @@ class _CoverFrame extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Reveal(
-            scene: 0,
-            fx: RevealFx.fade,
-            delay: 0.1,
-            introDelay: 0.1,
-            child: Text(
-              'VISTERA 2026 · Team Clover',
-              style: TextStyle(
-                fontSize: 12.5,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.6,
-                color: LandingPalette.label(context),
-              ),
-            ),
-          ),
-          const SizedBox(height: 6),
           Semantics(
             header: true,
             label: 'Momentum',
