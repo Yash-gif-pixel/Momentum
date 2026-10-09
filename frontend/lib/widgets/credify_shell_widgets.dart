@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+
 import '../theme/credify_theme.dart';
 
 const _themeCurve = Cubic(0.22, 1, 0.36, 1);
@@ -193,11 +194,7 @@ class GlassCard extends StatelessWidget {
     if (onTap != null) {
       content = Material(
         color: Colors.transparent,
-        child: InkWell(
-          borderRadius: border,
-          onTap: onTap,
-          child: content,
-        ),
+        child: InkWell(borderRadius: border, onTap: onTap, child: content),
       );
     }
 
@@ -205,7 +202,7 @@ class GlassCard extends StatelessWidget {
   }
 }
 
-/// Floating pill with a thumb that slides between the sun and the moon.
+/// Compact theme switch with a sun or moon carried by the sliding thumb.
 class ThemeTogglePill extends StatelessWidget {
   final bool isDark;
   final VoidCallback onToggle;
@@ -216,73 +213,67 @@ class ThemeTogglePill extends StatelessWidget {
     required this.onToggle,
   });
 
-  static const _icon = 26.0;
-  static const _gap = 6.0;
-  static const _pad = 5.0;
+  static const _trackWidth = 58.0;
+  static const _trackHeight = 32.0;
+  static const _thumbSize = 24.0;
+  static const _inset = 4.0;
 
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
     return Semantics(
       button: true,
-      label: 'Toggle dark or light mode',
+      label: isDark ? 'Switch to light mode' : 'Switch to dark mode',
       child: GestureDetector(
         onTap: onToggle,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(999),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-            child: Container(
-              padding: const EdgeInsets.all(_pad),
-              decoration: BoxDecoration(
-                color: t.pillFill,
-                borderRadius: BorderRadius.circular(999),
-                border: Border.all(color: t.glassBorder, width: 1),
-              ),
-              child: SizedBox(
-                width: _icon * 2 + _gap,
-                height: _icon,
-                child: Stack(
-                  children: [
-                    AnimatedAlign(
-                      duration: const Duration(milliseconds: 504),
-                      curve: _themeCurve,
-                      alignment:
-                          isDark ? Alignment.centerRight : Alignment.centerLeft,
-                      child: Container(
-                        width: _icon,
-                        height: _icon,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: t.accentGradient,
+        child: Tooltip(
+          message: isDark ? 'Switch to light mode' : 'Switch to dark mode',
+          child: Container(
+            width: _trackWidth,
+            height: _trackHeight,
+            padding: const EdgeInsets.all(_inset),
+            decoration: BoxDecoration(
+              color: t.pillFill,
+              borderRadius: BorderRadius.circular(999),
+              border: Border.all(color: t.glassBorder, width: 1),
+            ),
+            child: Stack(
+              children: [
+                AnimatedAlign(
+                  duration: const Duration(milliseconds: 260),
+                  curve: Curves.easeInOutCubic,
+                  alignment: isDark
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
+                  child: Container(
+                    width: _thumbSize,
+                    height: _thumbSize,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: t.accentGradient,
+                      boxShadow: [
+                        BoxShadow(
+                          color: t.accentA.withValues(alpha: 0.22),
+                          blurRadius: 8,
+                          spreadRadius: 0.5,
                         ),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        _slot(Icons.light_mode_rounded, !isDark, t),
-                        const SizedBox(width: _gap),
-                        _slot(Icons.dark_mode_rounded, isDark, t),
                       ],
                     ),
-                  ],
+                    child: Center(
+                      child: Icon(
+                        isDark
+                            ? Icons.light_mode_rounded
+                            : Icons.dark_mode_rounded,
+                        size: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _slot(IconData icon, bool active, CredifyTokens t) {
-    return SizedBox(
-      width: _icon,
-      height: _icon,
-      child: Icon(
-        icon,
-        size: 14,
-        color: active ? Colors.white : t.textTertiary,
       ),
     );
   }
@@ -293,8 +284,8 @@ class ThemeTogglePill extends StatelessWidget {
 /// page; the accent in light mode.
 Color _labelColor(BuildContext context) =>
     Theme.of(context).brightness == Brightness.dark
-        ? Colors.white
-        : context.tokens.accentA;
+    ? Colors.white
+    : context.tokens.accentA;
 
 class HeroPill extends StatelessWidget {
   final IconData icon;
@@ -361,10 +352,8 @@ class _FloatingCardState extends State<FloatingCard>
   @override
   void initState() {
     super.initState();
-    _c = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 4),
-    )..repeat(reverse: true);
+    _c = AnimationController(vsync: this, duration: const Duration(seconds: 4))
+      ..repeat(reverse: true);
   }
 
   @override
@@ -375,8 +364,10 @@ class _FloatingCardState extends State<FloatingCard>
 
   @override
   Widget build(BuildContext context) {
-    final drift = Tween<double>(begin: -7, end: 7)
-        .animate(CurvedAnimation(parent: _c, curve: Curves.easeInOut));
+    final drift = Tween<double>(
+      begin: -7,
+      end: 7,
+    ).animate(CurvedAnimation(parent: _c, curve: Curves.easeInOut));
     return AnimatedBuilder(
       animation: drift,
       builder: (_, child) =>
@@ -514,8 +505,11 @@ class _SlideToAuthorizeState extends State<SlideToAuthorize> {
                         ),
                       ],
                     ),
-                    child: const Icon(Icons.arrow_forward_rounded,
-                        color: Colors.white, size: 22),
+                    child: const Icon(
+                      Icons.arrow_forward_rounded,
+                      color: Colors.white,
+                      size: 22,
+                    ),
                   ),
                 ),
               ),
@@ -610,11 +604,7 @@ class PageHeader extends StatelessWidget {
         const SizedBox(height: 14),
         Text(
           subtitle,
-          style: TextStyle(
-            color: t.textSecondary,
-            fontSize: 15,
-            height: 1.55,
-          ),
+          style: TextStyle(color: t.textSecondary, fontSize: 15, height: 1.55),
         ),
         const SizedBox(height: 26),
       ],
