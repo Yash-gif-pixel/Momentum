@@ -10,9 +10,12 @@ import '../widgets/cashflow_chart.dart';
 import '../widgets/credify_shell_widgets.dart';
 import '../widgets/score_gauge.dart';
 import '../widgets/score_waterfall.dart';
+import '../features/climate/climate_api_service.dart';
+import 'lender_report_screen.dart';
 
 class LenderScreen extends StatelessWidget {
-  const LenderScreen({super.key});
+  final ClimateApiService climateService;
+  const LenderScreen({super.key, required this.climateService});
 
   @override
   Widget build(BuildContext context) {
@@ -167,8 +170,24 @@ class LenderScreen extends StatelessWidget {
                   ),
                 ),
 
-              if (state.analyzeResult != null && !state.analyzeLoading)
+              if (state.analyzeResult != null && !state.analyzeLoading) ...[
                 _ResultView(result: state.analyzeResult!),
+                const SizedBox(height: 12),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    icon: const Icon(Icons.picture_as_pdf_outlined),
+                    label: const Text('Open lender report / print to PDF'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => LenderReportScreen(
+                          climateService: climateService,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
 
               if (step == LenderStep.done) ...[
                 const SizedBox(height: 6),

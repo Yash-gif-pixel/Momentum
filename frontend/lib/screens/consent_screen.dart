@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../models/persona_meta.dart';
@@ -183,36 +184,114 @@ class ConsentScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              if (state.consentApproved) ...[
+              if (state.consentGrantedAt != null) ...[
                 const SizedBox(height: 22),
                 GlassCard(
                   borderColor: t.positive.withValues(alpha: 0.45),
-                  child: Row(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.check_circle_outline,
-                        color: t.positive,
-                        size: 20,
+                      Row(
+                        children: [
+                          Icon(
+                            state.consentApproved
+                                ? Icons.check_circle_outline
+                                : state.consentExpired
+                                    ? Icons.schedule
+                                    : Icons.remove_circle_outline,
+                            color: state.consentApproved
+                                ? t.positive
+                                : state.consentExpired
+                                    ? t.warning
+                                    : t.textTertiary,
+                            size: 20,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              'Consent receipt',
+                              style: TextStyle(
+                                color: t.textPrimary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                          StatusBadge(
+                            label: state.consentApproved
+                                ? 'ACTIVE'
+                                : state.consentExpired
+                                    ? 'EXPIRED'
+                                    : 'REVOKED',
+                            color: state.consentApproved
+                                ? t.positive
+                                : state.consentExpired
+                                    ? t.warning
+                                    : t.textTertiary,
+                          ),
+                        ],
                       ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          'Consent granted for '
-                          '${PersonaMeta.forId(state.selectedProfileId).name}.',
-                          style: TextStyle(
-                            color: t.positive,
-                            fontSize: 13.5,
-                            fontWeight: FontWeight.w600,
+                      const SizedBox(height: 12),
+                      _ReceiptLine(label: 'Receipt', value: state.consentReceiptId ?? 'Demo receipt'),
+                      _ReceiptLine(label: 'Borrower', value: PersonaMeta.forId(state.selectedProfileId).name),
+                      const _ReceiptLine(
+                        label: 'Data',
+                        value: 'Transaction dates, amounts, inflows/outflows, and derived cash-flow features',
+                      ),
+                      const _ReceiptLine(
+                        label: 'Purpose',
+                        value: 'Generate explainable cash-flow decision support for a lender; no automatic approval',
+                      ),
+                      _ReceiptLine(
+                        label: 'Date range',
+                        value: '${_date(state.consentDataPeriodStart)} to ${_date(state.consentDataPeriodEnd)} (up to 24 months)',
+                      ),
+                      _ReceiptLine(
+                        label: 'Granted',
+                        value: _dateTime(state.consentGrantedAt),
+                      ),
+                      _ReceiptLine(
+                        label: 'Expires',
+                        value: _dateTime(state.consentExpiresAt),
+                      ),
+                      if (state.consentRevokedAt != null)
+                        _ReceiptLine(
+                          label: 'Revoked',
+                          value: _dateTime(state.consentRevokedAt),
+                        ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Simulated Account Aggregator flow using synthetic profiles. The score and reasons are held in this app session; revoking clears them from the screen. No live bank data is fetched.',
+                        style: TextStyle(
+                          color: t.textSecondary,
+                          fontSize: 11,
+                          height: 1.4,
+                        ),
+                      ),
+                      if (state.consentApproved) ...[
+                        const SizedBox(height: 10),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: TextButton.icon(
+                            onPressed: state.revokeConsent,
+                            style: TextButton.styleFrom(
+                              foregroundColor: t.negative,
+                            ),
+                            icon: const Icon(Icons.block, size: 16),
+                            label: const Text('Revoke consent and clear score'),
                           ),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: state.revokeConsent,
-                        style: TextButton.styleFrom(
-                          foregroundColor: t.negative,
+                      ] else if (state.consentRevokedAt != null) ...[
+                        const SizedBox(height: 8),
+                        Text(
+                          'Consent revoked. The in-session score, reasons, and report are cleared.',
+                          style: TextStyle(
+                            color: t.warning,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                        child: const Text('Revoke'),
-                      ),
+                      ],
                     ],
                   ),
                 ),
@@ -419,6 +498,12 @@ class _ConsentSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = context.tokens;
+    final periodEnd = DateTime.now();
+    final periodStart = DateTime(
+      periodEnd.year - 2,
+      periodEnd.month,
+      periodEnd.day,
+    );
 
     return Container(
       decoration: BoxDecoration(
@@ -461,7 +546,7 @@ class _ConsentSheet extends StatelessWidget {
             ),
             const SizedBox(height: 14),
             Text(
-              'Share 24 months of transaction history for $personaName?',
+              'Review the data scope for $personaName',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: t.textPrimary,
@@ -471,12 +556,34 @@ class _ConsentSheet extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Simulated AA flow on synthetic data · read-only · '
-              'nothing leaves this session',
+              'Simulated Account Aggregator consent · synthetic data only',
               textAlign: TextAlign.center,
               style: TextStyle(color: t.textSecondary, fontSize: 12),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 16),
+            _ConsentScope(
+              label: 'Data',
+              value: 'Transaction dates, amounts, inflows/outflows, and derived cash-flow features.',
+            ),
+            _ConsentScope(
+              label: 'Purpose',
+              value: 'Create an explainable cash-flow signal for lender decision support. It does not approve or reject a loan automatically.',
+            ),
+            _ConsentScope(
+              label: 'Date range',
+              value: '${_date(periodStart)} to ${_date(periodEnd)} (up to 24 months available).',
+            ),
+            const _ConsentScope(
+              label: 'Access and expiry',
+              value: 'Read-only demo; expires after 30 days or when this app session ends. You can revoke at any time.',
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'No live bank is contacted and no real account data leaves this session.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: t.textTertiary, fontSize: 11, height: 1.4),
+            ),
+            const SizedBox(height: 20),
             SlideToAuthorize(
               label: 'Slide to authorise',
               doneLabel: 'Consent granted',
@@ -488,3 +595,58 @@ class _ConsentSheet extends StatelessWidget {
     );
   }
 }
+
+class _ConsentScope extends StatelessWidget {
+  final String label;
+  final String value;
+  const _ConsentScope({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 9),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 105,
+            child: Text(label, style: TextStyle(color: t.textTertiary, fontSize: 11, fontWeight: FontWeight.w700)),
+          ),
+          Expanded(child: Text(value, style: TextStyle(color: t.textPrimary, fontSize: 11.5, height: 1.4))),
+        ],
+      ),
+    );
+  }
+}
+
+class _ReceiptLine extends StatelessWidget {
+  final String label;
+  final String value;
+  const _ReceiptLine({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 78,
+            child: Text(label, style: TextStyle(color: t.textTertiary, fontSize: 10.5, fontWeight: FontWeight.w700)),
+          ),
+          Expanded(child: Text(value, style: TextStyle(color: t.textSecondary, fontSize: 10.5, height: 1.35))),
+        ],
+      ),
+    );
+  }
+}
+
+String _date(DateTime? value) =>
+    value == null ? 'Not set' : DateFormat('dd MMM yyyy').format(value);
+
+String _dateTime(DateTime? value) => value == null
+    ? 'Not set'
+    : DateFormat('dd MMM yyyy, HH:mm').format(value);

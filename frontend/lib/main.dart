@@ -12,6 +12,10 @@ import 'screens/consent_screen.dart';
 import 'screens/portfolio_screen.dart';
 import 'screens/borrower_screen.dart';
 import 'screens/landing_screen.dart';
+import 'screens/model_card_screen.dart';
+import 'features/climate/climate_api_service.dart';
+import 'features/climate/climate_http_service.dart';
+import 'features/climate/mock_climate_service.dart';
 import 'widgets/credify_mark.dart';
 import 'widgets/credify_shell_widgets.dart';
 
@@ -31,7 +35,8 @@ void main() {
 
 class CredifyApp extends StatefulWidget {
   final CredifyApiService service;
-  const CredifyApp({super.key, required this.service});
+  final ClimateApiService? climateService;
+  const CredifyApp({super.key, required this.service, this.climateService});
 
   @override
   State<CredifyApp> createState() => _CredifyAppState();
@@ -40,6 +45,11 @@ class CredifyApp extends StatefulWidget {
 class _CredifyAppState extends State<CredifyApp> {
   bool _isDark = true;
   bool _entered = false;
+
+  late final ClimateApiService _climateService = widget.climateService ??
+      (widget.service is MockBackend
+          ? MockClimateService()
+          : ClimateHttpService(baseUrl: _kBaseUrl));
 
   void _toggleTheme() => setState(() => _isDark = !_isDark);
 
@@ -56,6 +66,7 @@ class _CredifyAppState extends State<CredifyApp> {
         home: _entered
             ? CredifyShell(
                 service: widget.service,
+                climateService: _climateService,
                 isDark: _isDark,
                 onToggleTheme: _toggleTheme,
               )
@@ -71,12 +82,14 @@ class _CredifyAppState extends State<CredifyApp> {
 
 class CredifyShell extends StatefulWidget {
   final CredifyApiService service;
+  final ClimateApiService climateService;
   final bool isDark;
   final VoidCallback onToggleTheme;
 
   const CredifyShell({
     super.key,
     required this.service,
+    required this.climateService,
     required this.isDark,
     required this.onToggleTheme,
   });
@@ -86,7 +99,7 @@ class CredifyShell extends StatefulWidget {
 }
 
 class _CredifyShellState extends State<CredifyShell> {
-  // Tab order: 0 = Consent, 1 = Lender, 2 = Borrower, 3 = Portfolio
+  // Tab order: 0 = Consent, 1 = Lender, 2 = Borrower, 3 = Portfolio, 4 = Model
   int _tabIndex = 0;
 
   void goToTab(int index) => setState(() => _tabIndex = index);
@@ -113,9 +126,10 @@ class _CredifyShellState extends State<CredifyShell> {
                     index: _tabIndex,
                     children: [
                       ConsentScreen(onContinue: () => goToTab(1)),
-                      const LenderScreen(),
+                      LenderScreen(climateService: widget.climateService),
                       const BorrowerScreen(),
                       PortfolioScreen(service: widget.service),
+                      ModelCardScreen(service: widget.service),
                     ],
                   ),
                 ),
@@ -245,6 +259,7 @@ class _GlassNavBar extends StatelessWidget {
     (Icons.account_balance_outlined, Icons.account_balance, 'Lender'),
     (Icons.person_outline, Icons.person, 'Borrower'),
     (Icons.bar_chart_outlined, Icons.bar_chart, 'Portfolio'),
+    (Icons.fact_check_outlined, Icons.fact_check, 'Model'),
   ];
 
   @override

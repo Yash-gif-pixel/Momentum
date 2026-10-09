@@ -225,4 +225,108 @@ class MockBackend implements CredifyApiService {
     await Future.delayed(const Duration(milliseconds: 350));
     return PortfolioResponse.fromJson(_mockPortfolio);
   }
+
+  @override
+  Future<Map<String, dynamic>> getModelCard() async {
+    await Future.delayed(const Duration(milliseconds: 250));
+    return {
+      'source': 'Committed metrics.json snapshot for mock mode',
+      'validation': {
+        'validated_at': '2026-09-18T15:27:31.582906+00:00',
+        'artifact_trained_at': '2026-09-18T15:27:05.750740+00:00',
+        'train_seed': 42,
+        'n_train': 379,
+        'n_test': 127,
+        'auc_test': 0.9595,
+        'coverage': {
+          'n_profiles': 521,
+          'counts': {
+            'SCORED': 506,
+            'LOW_CONFIDENCE': 10,
+            'NOT_ASSESSABLE': 5,
+          },
+          'pct': {
+            'SCORED': 97.12,
+            'LOW_CONFIDENCE': 1.92,
+            'NOT_ASSESSABLE': 0.96,
+          },
+        },
+        'score_histogram_degenerate': false,
+        'stability_12_vs_24_months': {
+          'n_checked': 25,
+          'mean_abs_diff': 42.44,
+          'max_abs_diff': 82,
+          'n_swung_more_than_threshold': 20,
+          'swing_threshold': 20,
+          'caveat':
+              'This raw-sensitivity check bypasses the gate; 12-month trails are LOW_CONFIDENCE in production.',
+        },
+      },
+      'training': {
+        'algorithm': 'L2-regularized logistic regression',
+        'predictive_features': [
+          'pct_weeks_with_income',
+          'income_coefficient_of_variation',
+          'longest_dry_streak_days',
+          'trend_last_6_months',
+          'year_over_year_change',
+          'expense_to_income_ratio',
+          'ontime_bill_payment_rate',
+          'cash_buffer_days',
+          'worst_monthly_dip_pct',
+          'months_would_cover_emi_of_last_24',
+        ],
+        'computed_features': [
+          'pct_weeks_with_income',
+          'income_coefficient_of_variation',
+          'longest_dry_streak_days',
+          'trend_last_6_months',
+          'year_over_year_change',
+          'expense_to_income_ratio',
+          'ontime_bill_payment_rate',
+          'cash_buffer_days',
+          'worst_monthly_dip_pct',
+          'months_would_cover_emi_of_last_24',
+          'digital_share',
+          'cash_share',
+        ],
+        'features_excluded_from_scoring': ['digital_share', 'cash_share'],
+        'data_note': 'Training and validation use synthetic demo data.',
+      },
+      'sufficiency_gate': {
+        'not_assessable_below_months': 6,
+        'not_assessable_below_transactions_per_month': 8,
+        'full_confidence_requires_months_above': 12,
+        'full_confidence_requires_transactions_per_month_above': 15,
+        'logic':
+            'NOT_ASSESSABLE if either minimum is missed; otherwise LOW_CONFIDENCE unless both full-confidence thresholds are exceeded.',
+      },
+      'fairness': {
+        'excluded_fields': [
+          'pincode', 'pin_code', 'postal_code', 'district', 'state', 'city',
+          'village', 'ward', 'latitude', 'longitude', 'geo', 'address',
+          'region', 'gender', 'sex', 'age', 'date_of_birth', 'dob', 'caste',
+          'religion', 'community', 'language', 'mother_tongue',
+          'marital_status', 'education', 'disability', 'aadhaar', 'pan',
+          'voter_id', 'borrower_name', 'applicant_name',
+          'merchant_category_code', 'mcc', 'merchant_category',
+          'merchant_name', 'business_name', 'latent_health_tier',
+          'is_cash_heavy_edge_case', 'is_short_history_edge_case', 'note',
+        ],
+        'test_guardrails': [
+          'Static AST tests reject reads of excluded demographic, location, identity, memo, and generator-label fields on the feature path.',
+          'A runtime tripwire fails if feature extraction touches excluded profile metadata.',
+          'A parity test checks that cash-heavy and digital trails with identical cashflow remain equally assessable and have equal affordability results.',
+        ],
+        'limitation':
+            'These are structural and behavioral guardrails, not a measured demographic disparate-impact audit. Group-level fairness metrics are not reported in metrics.json.',
+      },
+      'known_limits': [
+        'AUC measures ranking on the synthetic held-out test set; it is not a guarantee of real-world approval accuracy or calibration.',
+        'The 12-versus-24-month stability check deliberately bypasses the production sufficiency gate and describes raw model sensitivity only.',
+        'The validation sample is limited to the committed synthetic dataset; independent real-world validation is not included.',
+        'The output is decision support. A lender must review the evidence and make the final decision.',
+      ],
+    };
+  }
 }
