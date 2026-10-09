@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../features/climate/climate_api_service.dart';
+import '../features/climate/climate_stress_card.dart';
 import '../models/analyze_response.dart';
 import '../models/bureau_record.dart';
 import '../models/persona_meta.dart';
@@ -8,9 +11,9 @@ import '../theme/credify_theme.dart';
 import '../widgets/authenticity_card.dart';
 import '../widgets/cashflow_chart.dart';
 import '../widgets/credify_shell_widgets.dart';
+import '../widgets/motion/motion.dart';
 import '../widgets/score_gauge.dart';
 import '../widgets/score_waterfall.dart';
-import '../features/climate/climate_api_service.dart';
 import 'lender_report_screen.dart';
 
 class LenderScreen extends StatelessWidget {
@@ -72,7 +75,9 @@ class LenderScreen extends StatelessWidget {
                           Text(
                             meta.sector,
                             style: TextStyle(
-                                color: t.textSecondary, fontSize: 12),
+                              color: t.textSecondary,
+                              fontSize: 12,
+                            ),
                           ),
                         ],
                       ),
@@ -101,14 +106,19 @@ class LenderScreen extends StatelessWidget {
                         const SizedBox(height: 12),
                         Row(
                           children: [
-                            Icon(Icons.lock_outline,
-                                size: 14, color: t.warning),
+                            Icon(
+                              Icons.lock_outline,
+                              size: 14,
+                              color: t.warning,
+                            ),
                             const SizedBox(width: 6),
                             Expanded(
                               child: Text(
                                 'Awaiting borrower consent — visit the Consent tab first.',
                                 style: TextStyle(
-                                    color: t.warning, fontSize: 12),
+                                  color: t.warning,
+                                  fontSize: 12,
+                                ),
                               ),
                             ),
                           ],
@@ -129,9 +139,9 @@ class LenderScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SectionLabel('Step 2 — Credify signal'),
+                      const SectionLabel('Step 2 — Momentum credit signal'),
                       CredifyButton(
-                        label: 'Run Credify check',
+                        label: 'Run Momentum check',
                         icon: Icons.auto_awesome,
                         onPressed: state.runCredifyAnalysis,
                       ),
@@ -139,26 +149,13 @@ class LenderScreen extends StatelessWidget {
                   ),
                 ),
 
-              if (state.analyzeLoading)
-                GlassCard(
-                  margin: const EdgeInsets.only(bottom: 14),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 18,
-                        height: 18,
-                        child: CircularProgressIndicator(
-                            strokeWidth: 2, color: t.accentA),
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Scoring cash-flow behaviour…',
-                        style:
-                            TextStyle(color: t.textSecondary, fontSize: 13),
-                      ),
-                    ],
-                  ),
-                ),
+              // Shimmering placeholders shaped like the result cards.
+              if (state.analyzeLoading) ...[
+                const SkeletonCard(lines: 4),
+                const SizedBox(height: 14),
+                const SkeletonCard(lines: 2),
+                const SizedBox(height: 14),
+              ],
 
               if (state.analyzeError != null)
                 GlassCard(
@@ -187,6 +184,15 @@ class LenderScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                // Separate card: climate never alters the score above.
+                // Hidden for the thin-file persona.
+                if (state.selectedProfileId != 'thin_file_002') ...[
+                  const SizedBox(height: 14),
+                  ClimateStressCard(
+                    service: climateService,
+                    profileId: state.selectedProfileId,
+                  ),
+                ],
               ],
 
               if (step == LenderStep.done) ...[
@@ -232,8 +238,10 @@ class _BureauResult extends StatelessWidget {
                 Container(
                   width: 8,
                   height: 8,
-                  decoration:
-                      BoxDecoration(color: t.negative, shape: BoxShape.circle),
+                  decoration: BoxDecoration(
+                    color: t.negative,
+                    shape: BoxShape.circle,
+                  ),
                 ),
                 const SizedBox(width: 10),
                 Text(
@@ -251,7 +259,7 @@ class _BureauResult extends StatelessWidget {
             Text(
               'This borrower is credit invisible — no bureau record exists, so '
               'traditional scoring cannot proceed. This is exactly the gap '
-              'Credify closes.',
+              'Momentum closes.',
               style: TextStyle(
                 color: t.textSecondary,
                 fontSize: 12.5,
@@ -277,8 +285,10 @@ class _BureauResult extends StatelessWidget {
               Container(
                 width: 8,
                 height: 8,
-                decoration:
-                    BoxDecoration(color: accent, shape: BoxShape.circle),
+                decoration: BoxDecoration(
+                  color: accent,
+                  shape: BoxShape.circle,
+                ),
               ),
               const SizedBox(width: 10),
               Expanded(
@@ -341,7 +351,7 @@ class _BureauResult extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             'Illustrative bureau record on synthetic data — no bureau was '
-            'queried, and nothing here reaches the Credify score.',
+            'queried, and nothing here reaches the Momentum score.',
             style: TextStyle(
               color: t.textTertiary,
               fontSize: 10.5,
@@ -369,7 +379,12 @@ class _ResultView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            StatusBadge(label: 'NOT ASSESSABLE', color: t.negative),
+            PulseOnce(
+              trigger: result,
+              color: t.negative,
+              radius: BorderRadius.circular(6),
+              child: StatusBadge(label: 'NOT ASSESSABLE', color: t.negative),
+            ),
             const SizedBox(height: 12),
             Text(
               'Not enough transaction history for a responsible assessment.',
@@ -382,10 +397,13 @@ class _ResultView extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               result.coverageReason ??
-                  'Credify refuses to guess when data coverage is too thin — a '
+                  'Momentum refuses to guess when data coverage is too thin — a '
                       'deliberate sufficiency gate, not a risk judgment.',
               style: TextStyle(
-                  color: t.textSecondary, fontSize: 12.5, height: 1.5),
+                color: t.textSecondary,
+                fontSize: 12.5,
+                height: 1.5,
+              ),
             ),
           ],
         ),
@@ -397,20 +415,23 @@ class _ResultView extends StatelessWidget {
     final badgeLabel = scored ? 'SCORED' : 'LOW CONFIDENCE';
 
     final reasons = <_Reason>[
-      ...result.reasonCodes.strengths
-          .map((r) => _Reason(item: r, positive: true)),
-      ...result.reasonCodes.concerns
-          .map((r) => _Reason(item: r, positive: false)),
+      ...result.reasonCodes.strengths.map(
+        (r) => _Reason(item: r, positive: true),
+      ),
+      ...result.reasonCodes.concerns.map(
+        (r) => _Reason(item: r, positive: false),
+      ),
     ];
     final maxAbs = reasons.isEmpty
         ? 1.0
         : reasons
-            .map((r) => r.item.contribution.abs())
-            .reduce((a, b) => a > b ? a : b);
+              .map((r) => r.item.contribution.abs())
+              .reduce((a, b) => a > b ? a : b);
 
+    // Result cards arrive one after another.
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: staggered([
         GlassCard(
           margin: const EdgeInsets.only(bottom: 14),
           child: Column(
@@ -419,8 +440,13 @@ class _ResultView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const SectionLabel('Credify score'),
-                  StatusBadge(label: badgeLabel, color: badgeColor),
+                  const SectionLabel('Momentum score'),
+                  PulseOnce(
+                    trigger: result,
+                    color: badgeColor,
+                    radius: BorderRadius.circular(6),
+                    child: StatusBadge(label: badgeLabel, color: badgeColor),
+                  ),
                 ],
               ),
               Center(
@@ -435,7 +461,10 @@ class _ResultView extends StatelessWidget {
                 Text(
                   result.coverageReason!,
                   style: TextStyle(
-                      color: t.textSecondary, fontSize: 12.5, height: 1.5),
+                    color: t.textSecondary,
+                    fontSize: 12.5,
+                    height: 1.5,
+                  ),
                 ),
               ],
             ],
@@ -460,16 +489,30 @@ class _ResultView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: _Metric(
-                      value:
-                          '₹${_fmt(result.affordability.indicativeEmiLow)} – ₹${_fmt(result.affordability.indicativeEmiHigh)}',
+                      value: Wrap(
+                        children: [
+                          CountUpText(
+                            value: result.affordability.indicativeEmiLow,
+                            format: (v) => '₹${_fmt(v)}',
+                          ),
+                          const Text(' – '),
+                          CountUpText(
+                            value: result.affordability.indicativeEmiHigh,
+                            format: (v) => '₹${_fmt(v)}',
+                          ),
+                        ],
+                      ),
                       label: 'EMI RANGE',
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: _Metric(
-                      value:
-                          '${result.affordability.monthsWouldCoverEmiOfLast24} / 24',
+                      value: CountUpText(
+                        value: result.affordability.monthsWouldCoverEmiOfLast24
+                            .toDouble(),
+                        format: (v) => '${v.round()} / 24',
+                      ),
                       label: 'MONTHS COVERED',
                     ),
                   ),
@@ -523,7 +566,7 @@ class _ResultView extends StatelessWidget {
             ],
           ),
         ),
-      ],
+      ]),
     );
   }
 
@@ -557,7 +600,9 @@ class _ReasonRow extends StatelessWidget {
     final contribution = reason.item.contribution;
     // Bar length is relative to the strongest driver in this result — the raw
     // log-odds contribution is printed separately so it is never read as a %.
-    final fraction = maxAbs == 0 ? 0.0 : (contribution.abs() / maxAbs).clamp(0.0, 1.0);
+    final fraction = maxAbs == 0
+        ? 0.0
+        : (contribution.abs() / maxAbs).clamp(0.0, 1.0);
 
     return Padding(
       padding: EdgeInsets.only(top: showDivider ? 12 : 0),
@@ -615,7 +660,8 @@ class _ReasonRow extends StatelessWidget {
 }
 
 class _Metric extends StatelessWidget {
-  final String value;
+  /// The figure; usually a [CountUpText] so it counts up on arrival.
+  final Widget value;
   final String label;
 
   const _Metric({required this.value, required this.label});
@@ -632,20 +678,17 @@ class _Metric extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            value,
+          DefaultTextStyle.merge(
             style: TextStyle(
               color: t.textPrimary,
               fontSize: 16,
               fontWeight: FontWeight.w800,
               letterSpacing: -0.5,
             ),
+            child: value,
           ),
           const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(color: t.textSecondary, fontSize: 10),
-          ),
+          Text(label, style: TextStyle(color: t.textSecondary, fontSize: 10)),
         ],
       ),
     );

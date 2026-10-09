@@ -48,28 +48,29 @@ class CredifyTokens extends ThemeExtension<CredifyTokens> {
         end: Alignment.bottomRight,
       );
 
+  /// Light mode: ivory background with gold accents.
   static const light = CredifyTokens(
-    bg: Color(0xFFF5F5F7),
-    orb1: Color(0xFFA2C2E1),
-    orb2: Color(0xFFD8C3E5),
+    bg: Color(0xFFFBF7EB), // ivory
+    orb1: Color(0xFFE9D7A0), // pale gold
+    orb2: Color(0xFFF3E4C4), // champagne
     orbOpacity: 0.35,
-    cardFill: Color(0xB3FFFFFF),
-    glassBorder: Color(0x80FFFFFF),
-    hairline: Color(0x14111114),
-    textPrimary: Color(0xFF111114),
-    textSecondary: Color(0x99111114),
-    textTertiary: Color(0x66111114),
-    accentA: Color(0xFF6366F1),
-    accentB: Color(0xFF10B981),
-    pillFill: Color(0x8CFFFFFF),
-    navFill: Color(0xA6FFFFFF),
-    positive: Color(0xFF059669),
-    warning: Color(0xFFD97706),
-    negative: Color(0xFFDC2626),
+    cardFill: Color(0xB3FFFDF6),
+    glassBorder: Color(0x99FFFFFF),
+    hairline: Color(0x1F6B5420),
+    textPrimary: Color(0xFF221C10),
+    textSecondary: Color(0x99221C10),
+    textTertiary: Color(0x66221C10),
+    accentA: Color(0xFFB8860B), // dark goldenrod
+    accentB: Color(0xFFD4AF37), // metallic gold
+    pillFill: Color(0x8CFFFDF6),
+    navFill: Color(0xB3FFFDF6),
+    positive: Color(0xFF2F7D4F),
+    warning: Color(0xFFC2620A),
+    negative: Color(0xFFB42318),
   );
 
   static const dark = CredifyTokens(
-    bg: Color(0xFF000000),
+    bg: Color(0xFF08070B), // the landing page's deep black
     orb1: Color(0xFF7C3AED),
     orb2: Color(0xFFDB2777),
     orbOpacity: 0.10,

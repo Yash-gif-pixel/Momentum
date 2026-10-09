@@ -6,6 +6,8 @@ import '../models/persona_meta.dart';
 import '../state/app_state.dart';
 import '../theme/credify_theme.dart';
 import '../widgets/credify_shell_widgets.dart';
+import '../widgets/motion/motion.dart';
+import 'landing/interactive_glow_button.dart';
 
 /// First screen after the landing: pick an MSME profile, then authorise the
 /// simulated Account Aggregator consent by sliding.
@@ -25,7 +27,7 @@ class ConsentScreen extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 8, 20, 120),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: staggered([
               Center(
                 child: HeroPill(
                   icon: Icons.insights_rounded,
@@ -101,10 +103,11 @@ class ConsentScreen extends StatelessWidget {
               // the row.
               SizedBox(
                 height: 208,
-                child: _fitsInARow(
-                  MediaQuery.of(context).size.width,
-                  state.availableProfileIds.length,
-                )
+                child:
+                    _fitsInARow(
+                      MediaQuery.of(context).size.width,
+                      state.availableProfileIds.length,
+                    )
                     ? Row(
                         children: [
                           for (
@@ -142,7 +145,8 @@ class ConsentScreen extends StatelessWidget {
                             width: 212,
                             child: _PersonaCard(
                               profileId: id,
-                              selected: state.hasPickedProfile &&
+                              selected:
+                                  state.hasPickedProfile &&
                                   id == state.selectedProfileId,
                               onTap: () =>
                                   _openConsentSheet(context, state, id),
@@ -296,7 +300,7 @@ class ConsentScreen extends StatelessWidget {
                   ),
                 ),
               ],
-            ],
+            ]),
           ),
         );
       },
@@ -388,8 +392,8 @@ class _PersonaCard extends StatelessWidget {
     final Color? border = selected
         ? t.accentA.withValues(alpha: 0.6)
         : hovered
-            ? t.accentA.withValues(alpha: 0.38)
-            : null;
+        ? t.accentA.withValues(alpha: 0.38)
+        : null;
 
     return GlassCard(
       padding: const EdgeInsets.all(16),
@@ -460,28 +464,13 @@ class _PersonaCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 11),
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  'Run cash-flow check',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: t.accentA,
-                    fontSize: 10.5,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              // Nudges toward the direction the card takes you.
-              AnimatedSlide(
-                offset: Offset(hovered ? 0.22 : 0, 0),
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.easeOutCubic,
-                child: Icon(Icons.chevron_right, size: 15, color: t.accentA),
-              ),
-            ],
+          Align(
+            alignment: Alignment.centerLeft,
+            child: InteractiveGlowButton(
+              label: 'Run cash-flow check',
+              onPressed: onTap,
+              compact: true,
+            ),
           ),
         ],
       ),
@@ -556,7 +545,8 @@ class _ConsentSheet extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Simulated Account Aggregator consent · synthetic data only',
+              'Simulated AA flow on synthetic data · read-only · '
+              '24 months · nothing leaves this session',
               textAlign: TextAlign.center,
               style: TextStyle(color: t.textSecondary, fontSize: 12),
             ),
@@ -584,10 +574,21 @@ class _ConsentSheet extends StatelessWidget {
               style: TextStyle(color: t.textTertiary, fontSize: 11, height: 1.4),
             ),
             const SizedBox(height: 20),
-            SlideToAuthorize(
-              label: 'Slide to authorise',
-              doneLabel: 'Consent granted',
-              onAuthorized: onAuthorized,
+            SizedBox(
+              width: double.infinity,
+              child: InteractiveGlowButton(
+                label: 'Authorize read-only access',
+                icon: Icons.lock_outline_rounded,
+                onPressed: onAuthorized,
+              ),
+            ),
+            const SizedBox(height: 6),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Not now',
+                style: TextStyle(color: t.textSecondary),
+              ),
             ),
           ],
         ),

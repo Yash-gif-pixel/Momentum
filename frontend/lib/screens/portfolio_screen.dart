@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+
+import '../features/climate/climate_api_service.dart';
+import '../features/climate/climate_portfolio_panel.dart';
 import '../mock_backend.dart';
 import '../models/portfolio_response.dart';
 import '../services/credify_api_service.dart';
 import '../theme/credify_theme.dart';
 import '../widgets/credify_shell_widgets.dart';
+import '../widgets/motion/motion.dart';
 import '../widgets/score_histogram_chart.dart';
 
 class PortfolioScreen extends StatefulWidget {
   final CredifyApiService service;
-  const PortfolioScreen({super.key, required this.service});
+  final ClimateApiService climateService;
+  final void Function(String profileId)? onOpenBorrower;
+  const PortfolioScreen({
+    super.key,
+    required this.service,
+    required this.climateService,
+    this.onOpenBorrower,
+  });
 
   @override
   State<PortfolioScreen> createState() => _PortfolioScreenState();
@@ -67,29 +78,14 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
               title: 'Portfolio,\nin focus.',
               subtitle: isMock
                   ? 'Aggregate signal metrics — illustrative placeholder data '
-                      '(mock backend).'
+                        '(mock backend).'
                   : 'Aggregate signal metrics across the credit-invisible book, '
-                      'live from the Credify backend.',
+                        'live from the Momentum backend.',
             ),
 
+            // Shimmering placeholders while the metrics load.
             if (_loading)
-              GlassCard(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 18,
-                      height: 18,
-                      child: CircularProgressIndicator(
-                          strokeWidth: 2, color: t.accentA),
-                    ),
-                    const SizedBox(width: 12),
-                    Text(
-                      'Loading portfolio metrics…',
-                      style: TextStyle(color: t.textSecondary, fontSize: 13),
-                    ),
-                  ],
-                ),
-              )
+              const SkeletonCard(lines: 3)
             else if (_error != null)
               GlassCard(
                 borderColor: t.negative.withValues(alpha: 0.4),
@@ -107,8 +103,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                     const SizedBox(height: 8),
                     Text(
                       _error!,
-                      style:
-                          TextStyle(color: t.textSecondary, fontSize: 12.5),
+                      style: TextStyle(color: t.textSecondary, fontSize: 12.5),
                     ),
                     const SizedBox(height: 14),
                     CredifyButton(
@@ -122,6 +117,12 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
               )
             else if (_data != null)
               _PortfolioBody(data: _data!),
+
+            const SizedBox(height: 20),
+            ClimatePortfolioPanel(
+              service: widget.climateService,
+              onBorrowerTap: widget.onOpenBorrower,
+            ),
           ],
         ),
       ),
@@ -138,68 +139,87 @@ class _PortfolioBody extends StatelessWidget {
     final t = context.tokens;
     final bands = data.bandDistribution;
 
+    // KPI tiles arrive one after another and count up; the rest follows.
+    final tiles = staggered([
+      _MetricCard(
+        value: CountUpText(
+          value: data.nProfiles.toDouble(),
+          format: (v) => '${v.round()}',
+        ),
+        label: 'ASSESSED',
+      ),
+      _MetricCard(
+        value: CountUpText(
+          value: data.coveragePct,
+          format: (v) => '${v.toStringAsFixed(0)}%',
+        ),
+        label: 'COVERAGE',
+      ),
+      _MetricCard(
+        value: data.auc == null
+            ? const Text('—')
+            : CountUpText(
+                value: data.auc!,
+                format: (v) => v.toStringAsFixed(2),
+              ),
+        label: 'MODEL AUC',
+      ),
+    ]);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Expanded(
-              child: _MetricCard(
-                value: data.nProfiles.toString(),
-                label: 'ASSESSED',
-              ),
-            ),
+            Expanded(child: tiles[0]),
             const SizedBox(width: 10),
-            Expanded(
-              child: _MetricCard(
-                value: '${data.coveragePct.toStringAsFixed(0)}%',
-                label: 'COVERAGE',
-              ),
-            ),
+            Expanded(child: tiles[1]),
             const SizedBox(width: 10),
-            Expanded(
-              child: _MetricCard(
-                value: data.auc == null
-                    ? '—'
-                    : data.auc!.toStringAsFixed(2),
-                label: 'MODEL AUC',
-              ),
-            ),
+            Expanded(child: tiles[2]),
           ],
         ),
         const SizedBox(height: 22),
 
-        const SectionLabel('Band distribution'),
-        GlassCard(
-          margin: const EdgeInsets.only(bottom: 22),
+        FadeSlideIn(
+          delay: const Duration(milliseconds: 120),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _BandRow(
-                label: 'Strong candidate',
-                count: bands.strongCandidate,
-                total: data.nProfiles,
-                color: t.positive,
+              const SectionLabel('Band distribution'),
+              GlassCard(
+                margin: const EdgeInsets.only(bottom: 22),
+                child: Column(
+                  children: [
+                    _BandRow(
+                      label: 'Strong candidate',
+                      count: bands.strongCandidate,
+                      total: data.nProfiles,
+                      color: t.positive,
+                    ),
+                    const SizedBox(height: 14),
+                    _BandRow(
+                      label: 'Manual review',
+                      count: bands.manualReview,
+                      total: data.nProfiles,
+                      color: t.warning,
+                    ),
+                    const SizedBox(height: 14),
+                    _BandRow(
+                      label: 'High-risk referral',
+                      count: bands.highRiskReferral,
+                      total: data.nProfiles,
+                      color: t.negative,
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 14),
-              _BandRow(
-                label: 'Manual review',
-                count: bands.manualReview,
-                total: data.nProfiles,
-                color: t.warning,
-              ),
-              const SizedBox(height: 14),
-              _BandRow(
-                label: 'High-risk referral',
-                count: bands.highRiskReferral,
-                total: data.nProfiles,
-                color: t.negative,
-              ),
+
+              const SectionLabel('Lending policy'),
+              // The histogram inside reveals left → right (ChartReveal).
+              _CutoffExplorer(data: data),
             ],
           ),
         ),
-
-        const SectionLabel('Lending policy'),
-        _CutoffExplorer(data: data),
       ],
     );
   }
@@ -300,21 +320,14 @@ class _CutoffExplorerState extends State<_CutoffExplorer> {
             ],
           ),
           const SizedBox(height: 18),
-          ScoreHistogramChart(
-            buckets: buckets,
-            cutoff: _cutoff,
-          ),
+          ScoreHistogramChart(buckets: buckets, cutoff: _cutoff),
           const SizedBox(height: 12),
           Text(
             'Volume only. Bad rate at each cutoff needs per-bucket repayment '
             'outcomes from the holdout, which this prototype does not expose — '
             'so this shows how many borrowers a policy lets through, not how '
             'many would default.',
-            style: TextStyle(
-              color: t.textTertiary,
-              fontSize: 11,
-              height: 1.5,
-            ),
+            style: TextStyle(color: t.textTertiary, fontSize: 11, height: 1.5),
           ),
         ],
       ),
@@ -349,17 +362,15 @@ class _PolicyStat extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 2),
-        Text(
-          caption,
-          style: TextStyle(color: t.textSecondary, fontSize: 10.5),
-        ),
+        Text(caption, style: TextStyle(color: t.textSecondary, fontSize: 10.5)),
       ],
     );
   }
 }
 
 class _MetricCard extends StatelessWidget {
-  final String value;
+  /// The figure; usually a [CountUpText].
+  final Widget value;
   final String label;
 
   const _MetricCard({required this.value, required this.label});
@@ -372,20 +383,17 @@ class _MetricCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            value,
+          DefaultTextStyle.merge(
             style: TextStyle(
               color: t.textPrimary,
               fontSize: 22,
               fontWeight: FontWeight.w800,
               letterSpacing: -0.5,
             ),
+            child: value,
           ),
           const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(color: t.textSecondary, fontSize: 10),
-          ),
+          Text(label, style: TextStyle(color: t.textSecondary, fontSize: 10)),
         ],
       ),
     );

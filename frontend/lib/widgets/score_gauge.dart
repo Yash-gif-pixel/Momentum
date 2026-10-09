@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
 import '../theme/credify_theme.dart';
+import 'motion/motion.dart';
 
 class ScoreGauge extends StatelessWidget {
   final double score; // 0–100
@@ -54,14 +56,18 @@ class ScoreGauge extends StatelessWidget {
         CircularPercentIndicator(
           radius: 90.0,
           lineWidth: 14.0,
-          animation: true,
+          // Final state at once when the OS asks for reduced motion.
+          animation: !Motion.reduced(context),
           animationDuration: 900,
           percent: (score / 100).clamp(0.0, 1.0),
           center: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                score.toStringAsFixed(1),
+              // Counts up in step with the arc (both 900 ms).
+              CountUpText(
+                value: score,
+                format: (v) => v.toStringAsFixed(1),
+                duration: Motion.count,
                 style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.w800,
