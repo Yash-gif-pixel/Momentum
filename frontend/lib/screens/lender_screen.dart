@@ -14,6 +14,7 @@ import '../widgets/credify_shell_widgets.dart';
 import '../widgets/motion/motion.dart';
 import '../widgets/score_gauge.dart';
 import '../widgets/score_waterfall.dart';
+import 'lender_report_screen.dart';
 
 class LenderScreen extends StatelessWidget {
   final ClimateApiService climateService;
@@ -168,6 +169,21 @@ class LenderScreen extends StatelessWidget {
 
               if (state.analyzeResult != null && !state.analyzeLoading) ...[
                 _ResultView(result: state.analyzeResult!),
+                const SizedBox(height: 12),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    icon: const Icon(Icons.picture_as_pdf_outlined),
+                    label: const Text('Open lender report / print to PDF'),
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => LenderReportScreen(
+                          climateService: climateService,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 // Separate card: climate never alters the score above.
                 // Hidden for the thin-file persona.
                 if (state.selectedProfileId != 'thin_file_002') ...[

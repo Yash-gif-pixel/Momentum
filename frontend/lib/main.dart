@@ -15,6 +15,7 @@ import 'screens/consent_screen.dart';
 import 'screens/portfolio_screen.dart';
 import 'screens/borrower_screen.dart';
 import 'screens/landing_screen.dart';
+import 'screens/model_card_screen.dart';
 import 'screens/scam_guard_api_screen.dart';
 import 'widgets/credify_mark.dart';
 import 'widgets/credify_shell_widgets.dart';
@@ -217,7 +218,7 @@ class CredifyShell extends StatefulWidget {
 
 class _CredifyShellState extends State<CredifyShell> {
   // Tab order: 0 = Consent, 1 = Lender, 2 = Borrower, 3 = Portfolio,
-  // 4 = Scam Guard
+  // 4 = Scam Guard, 5 = Model
   int _tabIndex = 0;
   // Portfolio (and its climate panel) is built on first visit only, so its
   // network loads don't start until the lender actually opens the tab.
@@ -267,6 +268,7 @@ class _CredifyShellState extends State<CredifyShell> {
                         else
                           const SizedBox.shrink(),
                         const ScamGuardApiScreen(),
+                        ModelCardScreen(service: widget.service),
                       ].indexed)
                         TabFade(active: i == _tabIndex, child: tab),
                     ],
@@ -400,6 +402,7 @@ class _GlassNavBar extends StatelessWidget {
     (Icons.person_outline, Icons.person, 'Borrower'),
     (Icons.bar_chart_outlined, Icons.bar_chart, 'Portfolio'),
     (Icons.shield_outlined, Icons.shield, 'Scam Guard'),
+    (Icons.fact_check_outlined, Icons.fact_check, 'Model'),
   ];
 
   @override

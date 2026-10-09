@@ -61,4 +61,16 @@ class CredifyHttpService implements CredifyApiService {
       );
     }
   }
+
+  @override
+  Future<Map<String, dynamic>> getModelCard() async {
+    final uri = Uri.parse('$baseUrl/api/model-card');
+    final response = await _client.get(uri, headers: {'Accept': 'application/json'});
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    throw Exception(
+      'Failed to load model card: HTTP ${response.statusCode} - ${response.body}',
+    );
+  }
 }

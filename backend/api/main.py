@@ -32,7 +32,15 @@ from backend.contract.api_schema import (
     ScoreHistogramBucket,
 )
 from backend.generator.schema import Archetype, HealthTier, Profile, ProfileMeta, SplitInfo
+from backend.features.feature_engine import EXCLUDED_FIELDS, FEATURE_NAMES
+from backend.features.sufficiency import (
+    MIN_MONTHS_ASSESSABLE,
+    MIN_MONTHS_FULL_CONFIDENCE,
+    MIN_TX_PER_MONTH_ASSESSABLE,
+    MIN_TX_PER_MONTH_FULL_CONFIDENCE,
+)
 from backend.model.artifact import ScorecardArtifact
+from backend.model.artifact import PREDICTIVE_FEATURES
 from backend.model.scorecard import analyze_from_aggregates, analyze_profile
 
 
@@ -213,6 +221,77 @@ def get_portfolio(metrics: dict = Depends(get_metrics)) -> PortfolioResponse:
             ScoreHistogramBucket(**bucket) for bucket in metrics["score_histogram"]
         ],
     )
+
+
+@app.get("/api/model-card")
+def get_model_card(metrics: dict = Depends(get_metrics)) -> dict:
+    """Expose a reviewable summary of the committed validation artifact.
+
+    The endpoint intentionally returns summary metrics only; the artifact's
+    per-profile stability examples are not needed by the public model card.
+    """
+    stability = metrics["stability_check_12_vs_24_months"]
+    coverage = metrics["coverage"]
+    return {
+        "source": "backend/model/artifacts/metrics.json",
+        "validation": {
+            "validated_at": metrics["validated_at"],
+            "artifact_trained_at": metrics["artifact_trained_at"],
+            "train_seed": metrics["train_seed"],
+            "n_train": metrics["n_train"],
+            "n_test": metrics["n_test"],
+            "auc_test": metrics["auc_test"],
+            "coverage": coverage,
+            "score_histogram_degenerate": metrics["score_histogram_degenerate"],
+            "stability_12_vs_24_months": {
+                key: stability[key]
+                for key in (
+                    "n_checked",
+                    "mean_abs_diff",
+                    "max_abs_diff",
+                    "n_swung_more_than_threshold",
+                    "swing_threshold",
+                    "caveat",
+                )
+            },
+        },
+        "training": {
+            "algorithm": "L2-regularized logistic regression",
+            "predictive_features": list(PREDICTIVE_FEATURES),
+            "computed_features": list(FEATURE_NAMES),
+            "features_excluded_from_scoring": ["digital_share", "cash_share"],
+            "data_note": "Training and validation use synthetic demo data.",
+        },
+        "sufficiency_gate": {
+            "not_assessable_below_months": MIN_MONTHS_ASSESSABLE,
+            "not_assessable_below_transactions_per_month": MIN_TX_PER_MONTH_ASSESSABLE,
+            "full_confidence_requires_months_above": MIN_MONTHS_FULL_CONFIDENCE,
+            "full_confidence_requires_transactions_per_month_above": MIN_TX_PER_MONTH_FULL_CONFIDENCE,
+            "logic": (
+                "NOT_ASSESSABLE if either minimum is missed; otherwise "
+                "LOW_CONFIDENCE unless both full-confidence thresholds are exceeded."
+            ),
+        },
+        "fairness": {
+            "excluded_fields": list(EXCLUDED_FIELDS),
+            "test_guardrails": [
+                "Static AST tests reject reads of excluded demographic, location, identity, memo, and generator-label fields on the feature path.",
+                "A runtime tripwire fails if feature extraction touches excluded profile metadata.",
+                "A parity test checks that cash-heavy and digital trails with identical cashflow remain equally assessable and have equal affordability results.",
+            ],
+            "limitation": (
+                "These are structural and behavioral guardrails, not a measured "
+                "demographic disparate-impact audit. Group-level fairness metrics "
+                "are not reported in metrics.json."
+            ),
+        },
+        "known_limits": [
+            "AUC measures ranking on the synthetic held-out test set; it is not a guarantee of real-world approval accuracy or calibration.",
+            "The 12-versus-24-month stability check deliberately bypasses the production sufficiency gate and describes raw model sensitivity only.",
+            "The validation sample is limited to the committed synthetic dataset; independent real-world validation is not included.",
+            "The output is decision support. A lender must review the evidence and make the final decision.",
+        ],
+    }
 
 
 @app.get("/api/profiles/{profile_id}", response_model=AnalyzeResponse)
