@@ -149,11 +149,11 @@ class GlassCard extends StatelessWidget {
 
   /// How long the fill and border take to reach a new value.
   ///
-  /// Defaults to the theme crossfade, which is what this is for nearly
-  /// everywhere: the card's colours follow light/dark in step with the rest
-  /// of the shell. A caller that drives [borderColor] from something faster
-  /// than a theme change -- a hover, say -- should pass its own duration,
-  /// otherwise the edge lags the motion going in and lingers coming out.
+  /// Defaults to instant. Light/dark switches are crossfaded once for the
+  /// whole app (a snapshot fading out), so cards must not each animate their
+  /// own colours — dozens of blurred cards re-rendering every frame is what
+  /// made the theme switch stutter. A caller that drives [borderColor] from
+  /// something like a hover should pass its own short duration.
   final Duration transitionDuration;
 
   const GlassCard({
@@ -164,7 +164,7 @@ class GlassCard extends StatelessWidget {
     this.radius = 24,
     this.borderColor,
     this.onTap,
-    this.transitionDuration = const Duration(milliseconds: 480),
+    this.transitionDuration = Duration.zero,
   });
 
   @override
@@ -289,6 +289,13 @@ class ThemeTogglePill extends StatelessWidget {
 }
 
 /// Rounded glass chip used above a screen title.
+/// Eyebrow and pill label colour: white in dark mode, as on the landing
+/// page; the accent in light mode.
+Color _labelColor(BuildContext context) =>
+    Theme.of(context).brightness == Brightness.dark
+        ? Colors.white
+        : context.tokens.accentA;
+
 class HeroPill extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -312,7 +319,7 @@ class HeroPill extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 13, color: t.accentA),
+              Icon(icon, size: 13, color: _labelColor(context)),
               const SizedBox(width: 7),
               // Flexible, not a bare Text: the Row is mainAxisSize.min, so a
               // label longer than the screen has nothing to shrink and
@@ -323,7 +330,7 @@ class HeroPill extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    color: t.accentA,
+                    color: _labelColor(context),
                     fontSize: 10,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0.8,
@@ -582,7 +589,7 @@ class PageHeader extends StatelessWidget {
           Text(
             eyebrow,
             style: TextStyle(
-              color: t.accentA,
+              color: _labelColor(context),
               fontSize: 10,
               fontWeight: FontWeight.w800,
               letterSpacing: 1.8,

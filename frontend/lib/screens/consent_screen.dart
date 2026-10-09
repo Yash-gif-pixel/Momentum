@@ -5,6 +5,7 @@ import '../models/persona_meta.dart';
 import '../state/app_state.dart';
 import '../theme/credify_theme.dart';
 import '../widgets/credify_shell_widgets.dart';
+import '../widgets/motion/motion.dart';
 
 /// First screen after the landing: pick an MSME profile, then authorise the
 /// simulated Account Aggregator consent by sliding.
@@ -24,7 +25,7 @@ class ConsentScreen extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 8, 20, 120),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: staggered([
               Center(
                 child: HeroPill(
                   icon: Icons.insights_rounded,
@@ -100,10 +101,11 @@ class ConsentScreen extends StatelessWidget {
               // the row.
               SizedBox(
                 height: 208,
-                child: _fitsInARow(
-                  MediaQuery.of(context).size.width,
-                  state.availableProfileIds.length,
-                )
+                child:
+                    _fitsInARow(
+                      MediaQuery.of(context).size.width,
+                      state.availableProfileIds.length,
+                    )
                     ? Row(
                         children: [
                           for (
@@ -141,7 +143,8 @@ class ConsentScreen extends StatelessWidget {
                             width: 212,
                             child: _PersonaCard(
                               profileId: id,
-                              selected: state.hasPickedProfile &&
+                              selected:
+                                  state.hasPickedProfile &&
                                   id == state.selectedProfileId,
                               onTap: () =>
                                   _openConsentSheet(context, state, id),
@@ -217,7 +220,7 @@ class ConsentScreen extends StatelessWidget {
                   ),
                 ),
               ],
-            ],
+            ]),
           ),
         );
       },
@@ -309,8 +312,8 @@ class _PersonaCard extends StatelessWidget {
     final Color? border = selected
         ? t.accentA.withValues(alpha: 0.6)
         : hovered
-            ? t.accentA.withValues(alpha: 0.38)
-            : null;
+        ? t.accentA.withValues(alpha: 0.38)
+        : null;
 
     return GlassCard(
       padding: const EdgeInsets.all(16),

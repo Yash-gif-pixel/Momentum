@@ -72,6 +72,13 @@ Risk levels: low below 30; medium from 30 through 59; high from 60. Weights and 
 - `frontend/lib/features/scam_guard/scam_guard_adapter.dart` provides `scamGuardChecker` with the same parameters as `ScamChecker`, maps SDK low/medium/high to none/caution/danger, signal messages to reasons, and elapsed microseconds to milliseconds. This adapter does not expose SDK `context`.
 - `frontend/lib/features/climate/climate_api_service.dart` defines `ClimateApiService.fetchOptions() -> Future<ClimateOptions>` and `fetchImpact(String profileId, String scenarioId) -> Future<ClimateImpact>`, plus `ClimateApiException` with optional `statusCode` and required `message`.
 - `ClimateStressCard` (`frontend/lib/features/climate/climate_stress_card.dart`) constructor: `ClimateStressCard({Key? key, required ClimateApiService service, required String profileId, String initialScenarioId = 'heavy_rain_week'})`.
+- App shell (`frontend/lib/main.dart`): tabs are 0 Consent, 1 Lender, 2 Borrower, 3 Portfolio (built on first visit), 4 Scam Guard (`ScamGuardApiScreen`). Shell header and app title read "Momentum".
+- The app creates one `ClimateApiService`: `MockClimateService()` when `CREDIFY_USE_MOCK=true`, otherwise `ClimateHttpService(baseUrl: CREDIFY_API_URL)` — Climate uses the same backend URL as Credify. `CLIMATE_LIVE` / `CLIMATE_API_URL` only affect `features/climate/preview_main.dart`.
+- `LenderScreen` shows `ClimateStressCard` under the score for `selectedProfileId`. `PortfolioScreen` shows `ClimatePortfolioPanel`; tapping a borrower calls `AppState.selectProfile(id)` and opens the Consent tab (selectProfile resets consent).
+- Mock-mode caveat: `MockClimateService` knows lakshmi/meera/arjun; Credify `MockBackend` knows lakshmi/thin_file/dormancy_gap/ramesh. Demo in live mode, where both cover all seven profiles.
+- App shell tab 4 ("Scam Guard") shows `ScamGuardApiScreen` (`frontend/lib/screens/scam_guard_api_screen.dart`, owner Yash): developer docs for the simulated Scam Guard API, demo/test API keys and a Try-it console. Akram's `PaymentDemoScreen` is no longer in the shell (files kept).
+- The hosted Scam Guard API is SIMULATED in the browser (endpoint `https://api.momentum.example/v1/scam-guard/check`, header `X-API-Key`, demo key `mk_test_demo_7f3a9c`); the on-device Dart SDK in `packages/scam_guard` is the real engine. `scam_guard_api_screen_test.dart` fails if documented points/thresholds drift from `packages/scam_guard/lib/src/rules.dart`.
+- The phone-style Scam Guard simulation lives on branch `feat/scam-guard-simulation` (owner Abhishiek, `frontend/lib/features/scam_guard_partner/`), demoed from his laptop; it is intentionally not merged into main.
 
 ## Ports and config
 
