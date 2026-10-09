@@ -6,6 +6,7 @@ import '../state/app_state.dart';
 import '../theme/credify_theme.dart';
 import '../widgets/credify_shell_widgets.dart';
 import '../widgets/motion/motion.dart';
+import 'landing/interactive_glow_button.dart';
 
 /// First screen after the landing: pick an MSME profile, then authorise the
 /// simulated Account Aggregator consent by sliding.
@@ -384,28 +385,13 @@ class _PersonaCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 11),
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  'Run cash-flow check',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: t.accentA,
-                    fontSize: 10.5,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              // Nudges toward the direction the card takes you.
-              AnimatedSlide(
-                offset: Offset(hovered ? 0.22 : 0, 0),
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.easeOutCubic,
-                child: Icon(Icons.chevron_right, size: 15, color: t.accentA),
-              ),
-            ],
+          Align(
+            alignment: Alignment.centerLeft,
+            child: InteractiveGlowButton(
+              label: 'Run cash-flow check',
+              onPressed: onTap,
+              compact: true,
+            ),
           ),
         ],
       ),
@@ -475,15 +461,26 @@ class _ConsentSheet extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               'Simulated AA flow on synthetic data · read-only · '
-              'nothing leaves this session',
+              '24 months · nothing leaves this session',
               textAlign: TextAlign.center,
               style: TextStyle(color: t.textSecondary, fontSize: 12),
             ),
             const SizedBox(height: 24),
-            SlideToAuthorize(
-              label: 'Slide to authorise',
-              doneLabel: 'Consent granted',
-              onAuthorized: onAuthorized,
+            SizedBox(
+              width: double.infinity,
+              child: InteractiveGlowButton(
+                label: 'Authorize read-only access',
+                icon: Icons.lock_outline_rounded,
+                onPressed: onAuthorized,
+              ),
+            ),
+            const SizedBox(height: 6),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Not now',
+                style: TextStyle(color: t.textSecondary),
+              ),
             ),
           ],
         ),
